@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conócenos</title>
+  <link rel="stylesheet" href="styleSedes.css" />
+  <link rel="icon" href="/image/icono.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Transición -->
+  <div id="page-transition"></div>
+
+  <!-- Botón volver -->
+  <a href="../index.html" class="transition-btn slide-right-red">✖</a>
+
+  <!-- Contenedor principal -->
+  <div class="conocenos-container">
+
+    <!-- Sección: Costa Rica -->
+    <div class="conocenos-box rojo">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="../image/sedes/sedeCostaRica.png" alt="Costa Rica" class="card-img" />
+          <div class="overlay"></div>
+          <div class="content">
+            <p>The Hospitality Center Costa Rica</p>
+            <button class="toggle-sedes">Info</button>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="content">
+            <p><strong>Correo:</strong> info@thehospitalitycenter-latam.com</p>
+            <p><strong>Paseo Colón</strong></p>
+            <p><strong>Telefono:</strong> (+506) 8819 8000</p>
+            <p><strong>Dirección:</strong> Entre Avenida Paseo Colón, y avenida segunda, calle 32,diagonal a la Embajada de España.</p>
+            <p><strong>Liberia</strong></p>
+            <p><strong>Telefono:</strong> (+506) 6474 5123</p>
+            <p><strong>Dirección:</strong> Proyecto Solárium, frente al aeropuerto Daniel Oduber. De la pops 100 sur oficina 13 segunda planta.</p>           
+            <div>  <a href="https://wa.me/573203852499" target="_blank" class="whatsapp-bubble bubble-cr">
+    <img src="/image/logos/logoWhatsapp.png" alt="WhatsApp Costa Rica">
+  </a></div>
+            <button class="toggle-sedes">Volver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección: Bogotá -->
+    <div class="conocenos-box blanco">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="../image/sedes/sedeBogota.jpeg" alt="Bogotá" class="card-img" />
+          <div class="overlay"></div>
+          <div class="content">
+            <p>The Hospitality Center Bogotá</p>
+            <button class="toggle-sedes">Info</button>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="content">
+            <p><a href="../image/logos/logoEmail.png"></a> info@thehospitalitycenter-latam.com</p>
+            <p><strong>Sede Galerias</strong></p>
+            <p><strong>Telefono:</strong> (+57) 324 3500719</p>
+            <p><strong>Dirección:</strong> Sede Galerias Cl. 57 #24-8.</p>
+            <div >
+  <!-- ... contenido ... -->
+  <a href="https://wa.me/573203852499" target="_blank" class="whatsapp-bubble bubble-bogota">
+    <img src="/image/logos/logoWhatsapp.png" alt="WhatsApp Bogotá">
+  </a>
+</div>
+            <button class="toggle-sedes">Volver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección: Medellín -->
+    <div class="conocenos-box rojo">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="../image/sedes/sedeMedellin.jpeg" alt="Medellín" class="card-img alejamiento" />
+          <div class="overlay"></div>
+          <div class="content">
+            <p>The Hospitality Center Medellín</p>
+            <button class="toggle-sedes">Info</button>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="content">
+            <p><strong>Correo:</strong> info@thehospitalitycenter-latam.com</p>
+            <p><strong>Telefono:</strong> (+57) 324 4987120</p>
+            <p><strong>Dirección:</strong> Calle 49 # 41-35, segundo piso. Al frente de la Estación Tranvía Pabellón del Agua.</p>
+            <div>
+  <!-- ... contenido ... -->
+  <a href="https://wa.me/573203852499" target="_blank" class="whatsapp-bubble bubble-medellin">
+    <img src="/image/logos/logoWhatsapp.png" alt="WhatsApp Medellín">
+  </a>
+</div>
+            <button class="toggle-sedes">Volver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const transition = document.getElementById("page-transition");
+
+      // Animación de transición
+      document.querySelectorAll("a.transition-btn").forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const href = this.getAttribute("href");
+          transition.className = "";
+
+          if (this.classList.contains("slide-right-red")) {
+            transition.classList.add("slide-left-red", "active");
+          }
+
+          setTimeout(() => {
+            window.location.href = href;
+          }, 700);
+        });
+      });
+
+      // Animación flip tarjetas
+      document.querySelectorAll(".conocenos-box").forEach(box => {
+        box.querySelectorAll(".toggle-sedes").forEach(btn => {
+          btn.addEventListener("click", () => {
+            document.querySelectorAll(".conocenos-box").forEach(other => {
+              if (other !== box) other.classList.remove("girado");
+            });
+            box.classList.toggle("girado");
+          });
+        });
+      });
+    });
+ document.addEventListener("DOMContentLoaded", () => {
+    // Verifica si viene de fuera del sitio y reemplaza por index
+    const isInternalReferrer = document.referrer.includes(location.hostname);
+    if (!isInternalReferrer) {
+      history.replaceState(null, '', 'index.html');
+    }
+
+    // Al presionar "atrás"
+    window.addEventListener('popstate', function () {
+      const transition = document.getElementById("page-transition");
+
+      // Limpia clases anteriores y aplica animación
+      transition.className = "";
+      transition.classList.add("slide-left-white", "active");
+
+      // Espera que termine la animación y redirige
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 700); // Tiempo de animación en ms (ajusta si tu CSS dura más)
+    });
+  });
+  </script>
+</body>
+
+</html>

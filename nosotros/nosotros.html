@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursos</title>
+  <link rel="stylesheet" href="styleNosotros.css" />
+  <link rel="icon" type="image/png" href="/image/icono.png" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <a href="../index.html" class="transition-btn slide-right-red">✖</a>
+  <div class="section-title">SOBRE NOSOTROS</div>
+  <h2 class="section-subtitle">Construyendo Éxito,<br><span>Un Empleado a la Vez</span></h2>
+
+  <section class="about-container">
+    <div class="about-card">
+      <p>
+        Somos una empresa americana dedicada al suministro de academia y personal para todo el sector <strong>HORECA</strong>, iniciamos en el año 2005 con 3 dishwasher en Miami y hoy operamos en Miami, Orlando, Carolina del Sur, Virginia, entre otros con más de 1,500 colaboradores en diferentes posiciones:
+      </p>
+
+      <ul class="listado">
+        <li>Bartender</li>
+        <li>HSKP</li>
+        <li>Houseman</li>
+        <li>Line Cook</li>
+        <li>Food Runner</li>
+        <li>Driver</li>
+        <li>¡Y mucho más!</li>
+      </ul>
+
+      <p>
+        A partir del 2022 iniciamos operaciones en Costa Rica, ampliando nuestros servicios de academia y renta de personal, y en el 2024 iniciamos labores en Colombia.
+      </p>
+
+      <a href="#" class="btn" id="open-mision" style="background-color:#ff2e2e;">Nuestra Misión +</a>
+      <br><br>
+      <a href="#" class="btn" id="open-vision" style="background-color:#ff2e2e;">Nuestra Visión +</a>
+
+      <!-- Modal Misión -->
+      <div id="modal-mision" class="modal-overlay">
+        <div class="modal-content">
+          <button class="modal-close" id="close-mision">&times;</button>
+          <span class="modal-subtitulo">NUESTRA MISIÓN</span>
+          <h2>Superar los <span class="modal-destacado">Estándares</span></h2>
+          <p>
+            Nuestra Misión, es brindar un valor extra en el área de hospitalidad, brindando herramientas para los
+            futuros colaboradores de enfrentarse a diferentes retos profesionales, destacándose ante el profesional
+            promedio. Adicional ofrecer un personal cualificado para mejorar el servicio de nuestros clientes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Modal Visión -->
+      <div id="modal-vision" class="modal-overlay">
+        <div class="modal-content">
+          <button class="modal-close" id="close-vision">&times;</button>
+          <span class="modal-subtitulo">NUESTRA VISIÓN</span>
+          <h2>Alcanzar la <span class="modal-destacado">Excelencia</span></h2>
+          <p>
+            Convertirnos en la academia más reconocida por nuestras certificaciones y con el mejor personal
+            capacitado para la necesidad de nuestros clientes.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-card">
+      <video autoplay muted loop playsinline class="bg-video">
+        <source src="/image/IMG_5247.MOV" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+
+  <!-- Sección Instagram -->
+  <section class="instagram-section">
+    <h3 class="ig-title">Nuestras últimas publicaciones</h3>
+    <div class="ig-container">
+      <iframe src="https://www.instagram.com/thehospitalitycentercolombia/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+    </div>
+  </section>
+
+  <!-- Burbujas -->
+  <a href="https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/29/12/20250529121716-E1Y7Q513.json" target="_blank" class="bubble bubble-chatbot" title="Habla con nuestro asistente">
+    <img src="/image/logos/logoChatbot.png" alt="Chatbot" />
+  </a>
+
+  <div class="bubble bubble-toggle" onclick="toggleBubbles()">
+    <img id="toggleIcon" src="/image/logos/logoMore.png" alt="Menú" />
+  </div>
+
+  <a href="https://wa.me/573203852499" target="_blank" class="bubble bubble-option" id="bubble1" title="WhatsApp">
+    <img src="/image/logos/logoWhatsapp.png" alt="WhatsApp" />
+  </a>
+  <a href="https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/29/12/20250529121716-E1Y7Q513.json" target="_blank" class="bubble bubble-option" id="bubble2" title="Chatbot">
+    <img src="/image/logos/logoChatbot.png" alt="Chatbot" />
+  </a>
+  <a href="https://www.instagram.com/thehospitalitycentercolombia" target="_blank" class="bubble bubble-option" id="bubble3" title="Instagram">
+    <img src="/image/logos/logoInstagram.png" alt="Instagram" />
+  </a>
+
+  <!-- JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const transition = document.createElement("div");
+      transition.id = "page-transition";
+      document.body.appendChild(transition);
+
+      document.querySelectorAll("a.transition-btn").forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const href = this.getAttribute("href");
+          transition.className = "";
+
+          if (this.classList.contains("slide-right-white")) {
+            transition.classList.add("slide-right-white", "active");
+          } else if (this.classList.contains("slide-right-red")) {
+            transition.classList.add("slide-right-red", "active");
+          } else if (this.classList.contains("slide-left-white")) {
+            transition.classList.add("slide-left-white", "active");
+          } else if (this.classList.contains("slide-left-red")) {
+            transition.classList.add("slide-left-red", "active");
+          }
+
+          setTimeout(() => {
+            window.location.href = href;
+          }, 700);
+        });
+      });
+
+      // Burbujas
+      let bubblesOpen = false;
+      window.toggleBubbles = function () {
+        const options = document.querySelectorAll('.bubble-option');
+        const icon = document.getElementById('toggleIcon');
+
+        if (!bubblesOpen) {
+          options.forEach((bubble, i) => {
+            bubble.style.bottom = `${80 + i * 60}px`;
+            bubble.classList.add('show');
+          });
+          icon.src = "/image/logos/logoClose.png";
+        } else {
+          options.forEach((bubble) => {
+            bubble.style.bottom = `20px`;
+            bubble.classList.remove('show');
+          });
+          icon.src = "/image/logos/logoMore.png";
+        }
+
+        bubblesOpen = !bubblesOpen;
+      };
+
+      // Modales
+      document.getElementById('open-mision').addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById('modal-mision').style.display = 'flex';
+      });
+
+      document.getElementById('close-mision').addEventListener('click', function () {
+        document.getElementById('modal-mision').style.display = 'none';
+      });
+
+      document.getElementById('open-vision').addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById('modal-vision').style.display = 'flex';
+      });
+
+      document.getElementById('close-vision').addEventListener('click', function () {
+        document.getElementById('modal-vision').style.display = 'none';
+      });
+
+      window.addEventListener('click', (e) => {
+        if (e.target === document.getElementById('modal-mision')) document.getElementById('modal-mision').style.display = 'none';
+        if (e.target === document.getElementById('modal-vision')) document.getElementById('modal-vision').style.display = 'none';
+      });
+    });
+
+    // Volver atrás redirige al index
+    window.addEventListener('popstate', function () {
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

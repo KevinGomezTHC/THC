@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursos</title>
+    <link rel="stylesheet" href="styleEquipo.css" />
+    <link rel="icon" type="image/png" href="/image/icono.png" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="page-transition"></div>
+
+    <!-- Botón de cerrar (✖) -->
+    <div class="vision-expandido1">
+        <a href="../index.html" class="transition-btn slide-right-red">✖</a>
+
+        <section class="cursos-container">
+            <!-- INTRO TEXT -->
+            <div class="intro-cursos">
+                <span class="intro-subtitulo">NUESTRO EQUIPO</span>
+                <h2>¿Quieres destacar en el <span class="resaltado">mundo laboral</span>?</h2>
+                <p>
+                    Nuestros cursos te brindan los conocimientos y habilidades necesarias para convertirte en un
+                    profesional altamente calificado.
+                </p>
+            </div>
+
+            <!-- GRID DE CURSOS -->
+            <div class="cursos-grid">
+                <!-- CURSO 1 -->
+                <div class="curso-wrapper">
+                    <div class="curso-img-out">
+                        <img src="/image/personas/rodolfoMurillo.png" alt="Bartender" class="curso-img-b" />
+                    </div>
+                    <div class="modal-content nuevo-curso">
+                        <div class="curso-info">
+                            <ul>
+                                <li><h2>Rodolfo Murillo Gutierrez</h2>Presidente</li>
+                                <li><p>Bogota - Colombia</p></li>
+                            </ul>
+                            <button class="curso-btn"><a href="https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/29/12/20250529121716-E1Y7Q513.json"></a>Inscríbete</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="curso-wrapper">
+                    <div class="curso-img-out">
+                        <img src="/image/personas/rodolfoMurillo.png" alt="Bartender" class="curso-img-b" />
+                    </div>
+                    <div class="modal-content nuevo-curso">
+                        <div class="curso-info">
+                            <ul>
+                                <li><h2>Rodolfo Murillo Gutierrez</h2>Presidente</li>
+                                <li><p>Bogota - Colombia</p></li>
+                            </ul>
+                            <button class="curso-btn"><a href="https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/29/12/20250529121716-E1Y7Q513.json"></a>Inscríbete</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="curso-wrapper">
+                    <div class="curso-img-out">
+                        <img src="/image/personas/rodolfoMurillo.png" alt="Bartender" class="curso-img-b" />
+                    </div>
+                    <div class="modal-content nuevo-curso">
+                        <div class="curso-info">
+                            <ul>
+                                <li><h2>Rodolfo Murillo Gutierrez</h2>Presidente</li>
+                                <li><p>Bogota - Colombia</p></li>
+                            </ul>
+                            <button class="curso-btn"><a href="https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/29/12/20250529121716-E1Y7Q513.json"></a>Inscríbete</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="curso-wrapper">
+                    <div class="curso-img-out">
+                        <img src="/image/personas/rodolfoMurillo.png" alt="Bartender" class="curso-img-b" />
+                    </div>
+                    <div class="modal-content nuevo-curso">
+                        <div class="curso-info">
+                            <ul>
+                                <li><h2>Rodolfo Murillo Gutierrez</h2>Presidente</li>
+                                <li><p>Bogota - Colombia</p></li>
+                            </ul>
+                            <button class="curso-btn"><a href="https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/29/12/20250529121716-E1Y7Q513.json"></a>Inscríbete</button>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+        <!-- Transición de salida -->
+        <script>
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const transition = document.createElement("div");
+                transition.id = "page-transition";
+                document.body.appendChild(transition);
+
+                document.querySelectorAll("a.transition-btn").forEach(link => {
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const href = this.getAttribute("href");
+
+                        // Limpiar clases anteriores
+                        transition.className = "";
+
+                        // Detectar clase
+                        if (this.classList.contains("slide-right-white")) {
+                            transition.classList.add("slide-right-white", "active");
+                        } else if (this.classList.contains("slide-right-red")) {
+                            transition.classList.add("slide-right-red", "active");
+                        } else if (this.classList.contains("slide-left-white")) {
+                            transition.classList.add("slide-left-white", "active");
+                        } else if (this.classList.contains("slide-left-red")) {
+                            transition.classList.add("slide-left-red", "active");
+                        }
+
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 700);
+                    });
+                });
+            });
+            window.addEventListener('popstate', function () {
+                window.location.href = 'index.html';
+            });
+        </script>
+        <!-- Burbuja WhatsApp 
+    <a href="https://wa.me/573203852499" target="_blank" class="bubble bubble-whatsapp"
+        title="Contáctanos por WhatsApp">
+        <img src="/image/whatsapp-icon.png" alt="WhatsApp" />
+    </a>-->
+        <!-- Burbuja ChatBot -->
+        <a href="https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/29/12/20250529121716-E1Y7Q513.json"
+            target="_blank" class="bubble bubble-chatbot" title="Habla con nuestro asistente">
+            <img src="/image/logos/logoChatbot.png" alt="Chatbot" />
+        </a>
+</body>
+
+</html>
