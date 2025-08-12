@@ -105,6 +105,14 @@ body {
   margin-left: 220px;
   justify-items: center;
 }
+.cursos-grid3 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: -350px;
+  margin-left: -170px;
+  justify-items: center;
+}
 .modal-content {
   background-color: #ffffff;
   border-radius: 18px;
