@@ -17,8 +17,8 @@
 
     <section class="isometric-section">
         <div class="iso-right">
-            <!-- Cursos siempre visibles -->
-            <div class="iso-box vision">
+            <!-- Cursos visibles al inicio -->
+            <div class="iso-box vision curso-inicial">
                 <div class="modal-content">
                     <span class="modal-subtitulo">Contenido del Curso</span>
                     <h2>Bartender</h2>
@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <div class="iso-box studio">
+            <div class="iso-box studio curso-inicial">
                 <div class="modal-content">
                     <span class="modal-subtitulo">Contenido del Curso</span>
                     <h2>Mesero</h2>
@@ -57,10 +57,10 @@
                 </div>
             </div>
 
-            <!-- Botón para mostrar/ocultar -->
+            <!-- Botón -->
             <button class="ver-mas-btn" onclick="mostrarCursos()">Ver más</button>
 
-            <!-- Cursos extra ocultos por defecto -->
+            <!-- Cursos alternativos ocultos al inicio -->
             <div class="extra-cursos" style="display:none;">
                 <div class="iso-box vision">
                     <div class="modal-content">
@@ -118,7 +118,7 @@
         </div>
     </section>
 
-    <!-- Burbuja flotante con redes -->
+    <!-- Burbuja flotante -->
     <div class="floating-bubble-container">
         <div class="sub-bubbles" id="sub-bubbles">
             <a href="https://wa.me/573203852499" target="_blank" title="WhatsApp">
@@ -153,15 +153,33 @@
             });
         });
 
+        let mostrandoAlternativos = false;
+        let cursosOriginales = [];
+
         function mostrarCursos() {
-            const extraCursos = document.querySelector('.extra-cursos');
+            const contenedor = document.querySelector('.iso-right');
+            const cursosVisibles = document.querySelectorAll('.curso-inicial');
+            const cursosExtra = document.querySelectorAll('.extra-cursos .iso-box');
             const btn = document.querySelector('.ver-mas-btn');
-            if (extraCursos.style.display === 'block') {
-                extraCursos.style.display = 'none';
-                btn.textContent = 'Ver más';
+
+            if (!mostrandoAlternativos) {
+                // Guardar los originales antes de reemplazar
+                cursosOriginales = Array.from(cursosVisibles).map(curso => curso.cloneNode(true));
+
+                // Reemplazar
+                cursosVisibles[0].replaceWith(cursosExtra[0].cloneNode(true));
+                cursosVisibles[1].replaceWith(cursosExtra[1].cloneNode(true));
+
+                btn.textContent = 'Ver anteriores';
+                mostrandoAlternativos = true;
             } else {
-                extraCursos.style.display = 'block';
-                btn.textContent = 'Ver menos';
+                // Restaurar originales
+                const actuales = document.querySelectorAll('.iso-right .iso-box');
+                actuales[0].replaceWith(cursosOriginales[0]);
+                actuales[1].replaceWith(cursosOriginales[1]);
+
+                btn.textContent = 'Ver más';
+                mostrandoAlternativos = false;
             }
         }
     </script>
