@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Academia de hospitalidad: cursos de bartender, misión y visión institucional" />
+  <title>The Hospitality Center</title>
+  <link rel="icon" type="image/png" href="/image/icono.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="page-transition"></div>
+
+  <section class="isometric-section">
+    <div class="iso-left">
+      <video autoplay muted loop playsinline class="bg-video">
+        <source src="/image/thc2.mp4" type="video/mp4" />
+      </video>
+      <div class="bg-overlay"></div>
+      <div class="iso-content">
+        <div class="iso-text">
+          <img src="/image/thc-logo.png" alt="Logo" class="iso-logo" />
+          <p><span class="text-bg">Conecta con oportunidades globales y desarrolla habilidades únicas para destacar en el sector.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="iso-right">
+      <div class="iso-box vision">
+        <img src="/image/icono.png" alt="Diseño isométrico" class="iso-illustration" />
+        <h4>¡Inscríbete hoy y prepárate para un futuro exitoso!</h4>
+        <p>Conoce nuestros cursos</p><br />
+        <a href="cursos/cursos.html" class="transition-btn slide-right-white">Ver más</a>
+        <a href="cursos1/cursos1.html" class="transition-btn slide-right-white">Ver más1</a>
+      </div>
+
+      <div class="iso-box studio">
+        <img src="/image/icono.png" alt="Diseño isométrico" class="iso-illustration" />
+        <h4>CONÓCENOS</h4>
+        <a href="sedes/sedes.html" class="transition-btn slide-right-red">Nuestras sedes</a>
+        <a href="nosotros/nosotros.html" class="transition-btn slide-right-red">Nosotros</a>
+        <a href="equipo/equipo.html" class="transition-btn slide-right-red">Nuestro equipo</a>
+      </div>
+    </div>
+  </section>
+  <!-- Burbuja flotante con redes -->
+<div class="floating-bubble-container">
+  <div class="sub-bubbles" id="sub-bubbles">
+    <a href="https://wa.me/573203852499" target="_blank" title="WhatsApp">
+      <img src="/image/logos/logoWhatsapp.png" alt="WhatsApp">
+    </a>
+    <a href="https://www.instagram.com/thehospitalitycentercolombia" target="_blank" title="Instagram">
+      <img src="/image/logos/logoInstagram.png" alt="Instagram">
+    </a>
+    <a href="https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/29/12/20250529121716-E1Y7Q513.json" 
+       target="_blank" title="Chatbot">
+      <img src="/image/logos/logoChatbot.png" alt="Chatbot">
+    </a>
+  </div>
+  <div class="main-bubble" id="main-bubble">
+    <img src="/image/logos/logoMore.png" alt="Más">
+  </div>
+</div>
+
+
+  <div id="click-loader" style="display:none;">
+    <img src="/image/icono.png" alt="Cargando..." />
+  </div>
+<!-- Burbuja superior derecha solo con texto -->
+<a href="https://w3uqunyst2.zite.so" target="_blank" class="top-oval-bubble-text" title="Únete a nuestra comunidad">
+  Nuestra comunidad
+</a>
+
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const transition = document.createElement("div");
+      transition.id = "page-transition";
+      document.body.appendChild(transition);
+
+      document.querySelectorAll("a.transition-btn").forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const href = this.getAttribute("href");
+          transition.className = "";
+
+          if (this.classList.contains("slide-right-white")) {
+            transition.classList.add("slide-right-white", "active");
+          } else if (this.classList.contains("slide-right-red")) {
+            transition.classList.add("slide-right-red", "active");
+          } else if (this.classList.contains("slide-left-white")) {
+            transition.classList.add("slide-left-white", "active");
+          } else if (this.classList.contains("slide-left-red")) {
+            transition.classList.add("slide-left-red", "active");
+          }
+
+          setTimeout(() => {
+            window.location.href = href;
+          }, 700);
+        });
+      });
+
+      const mainBubble = document.getElementById("main-bubble");
+      const bubbleContainer = document.querySelector(".floating-bubble-container");
+
+      mainBubble.addEventListener("click", () => {
+        bubbleContainer.classList.toggle("active");
+      });
+    });
+      // ------------------------------
+  // BURBUJA FLOTANTE DE CONTACTO
+  // ------------------------------
+  function toggleBubbles() {
+    const options = document.querySelectorAll('.bubble-option');
+    const icon = document.getElementById('toggleIcon');
+
+    if (!bubblesOpen) {
+      options.forEach((bubble, i) => {
+        bubble.style.bottom = `${80 + i * 60}px`;
+        bubble.classList.add('show');
+      });
+      icon.src = "";
+    } else {
+      options.forEach((bubble) => {
+        bubble.style.bottom = `20px`;
+        bubble.classList.remove('show');
+      });
+      icon.src = "";
+    }
+
+  }
+
+  window.toggleBubbles = toggleBubbles;
+  </script>
+</body>
+</html>
