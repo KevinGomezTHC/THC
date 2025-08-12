@@ -8,7 +8,6 @@ body {
   background-position: center;
   background-attachment: fixed;
   color: #333;
-  overflow: hidden;
 }
 
 /* Contenedor principal */
@@ -87,7 +86,14 @@ body {
   margin-left: -170px;
   justify-items: center;
 }
-
+.cursos-grid2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 500px;
+  margin-left: -170px;
+  justify-items: center;
+}
 .modal-content {
   background-color: #ffffff;
   border-radius: 18px;
@@ -322,6 +328,10 @@ h2 {
     margin-left: 10px;
     grid-template-columns: repeat(2, 1fr);
   }
+    .cursos-grid2 {
+    margin-left: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -360,7 +370,9 @@ h2 {
   .cursos-grid {
     grid-template-columns: 1fr;
   }
-
+  .cursos-grid2 {
+    grid-template-columns: 1fr;
+  }
   .bubble-whatsapp {
     right: 70px;
     bottom: 15px;
