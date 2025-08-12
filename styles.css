@@ -2007,4 +2007,11 @@ img.nc-img:hover,
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.iso-logo{
+    position: fixed;
+    top: 250px;
+    right: 20px;
+    min-width: 100px;
+    height: auto;
+}
 }
