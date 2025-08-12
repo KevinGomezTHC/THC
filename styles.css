@@ -1884,6 +1884,10 @@ img.nc-img:hover,
     width: 100px;
     height: 50px;
   }
+  .body{
+    overflow: hidden;
+  }
+  
 }.floating-bubble-container {
   position: fixed;
   bottom: 20px;
