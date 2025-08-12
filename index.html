@@ -23,7 +23,8 @@
       <div class="iso-content">
         <div class="iso-text">
           <img src="/image/thc-logo.png" alt="Logo" class="iso-logo" />
-          <p><span class="text-bg">Conecta con oportunidades globales y desarrolla habilidades únicas para destacar en el sector.</span></p>
+          <p><span class="text-bg">Conecta con oportunidades globales y desarrolla habilidades únicas para destacar en
+              el sector.</span></p>
         </div>
       </div>
     </div>
@@ -33,8 +34,8 @@
         <img src="/image/icono.png" alt="Diseño isométrico" class="iso-illustration" />
         <h4>¡Inscríbete hoy y prepárate para un futuro exitoso!</h4>
         <p>Conoce nuestros cursos</p><br />
-        <a href="cursos/cursos.html" class="transition-btn slide-right-white">Ver más</a>
-        <a href="cursos1/cursos1.html" class="transition-btn slide-right-white">Ver más1</a>
+        <!-- <a href="cursos/cursos.html" class="transition-btn slide-right-white">Ver más</a>-->
+        <a href="cursos1/cursos1.html" class="transition-btn slide-right-white">Ver más</a>
       </div>
 
       <div class="iso-box studio">
@@ -47,32 +48,32 @@
     </div>
   </section>
   <!-- Burbuja flotante con redes -->
-<div class="floating-bubble-container">
-  <div class="sub-bubbles" id="sub-bubbles">
-    <a href="https://wa.me/573203852499" target="_blank" title="WhatsApp">
-      <img src="/image/logos/logoWhatsapp.png" alt="WhatsApp">
-    </a>
-    <a href="https://www.instagram.com/thehospitalitycentercolombia" target="_blank" title="Instagram">
-      <img src="/image/logos/logoInstagram.png" alt="Instagram">
-    </a>
-    <a href="https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/29/12/20250529121716-E1Y7Q513.json" 
-       target="_blank" title="Chatbot">
-      <img src="/image/logos/logoChatbot.png" alt="Chatbot">
-    </a>
+  <div class="floating-bubble-container">
+    <div class="sub-bubbles" id="sub-bubbles">
+      <a href="https://wa.me/573203852499" target="_blank" title="WhatsApp">
+        <img src="/image/logos/logoWhatsapp.png" alt="WhatsApp">
+      </a>
+      <a href="https://www.instagram.com/thehospitalitycentercolombia" target="_blank" title="Instagram">
+        <img src="/image/logos/logoInstagram.png" alt="Instagram">
+      </a>
+      <a href="https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/29/12/20250529121716-E1Y7Q513.json"
+        target="_blank" title="Chatbot">
+        <img src="/image/logos/logoChatbot.png" alt="Chatbot">
+      </a>
+    </div>
+    <div class="main-bubble" id="main-bubble">
+      <img src="/image/logos/logoMore.png" alt="Más">
+    </div>
   </div>
-  <div class="main-bubble" id="main-bubble">
-    <img src="/image/logos/logoMore.png" alt="Más">
-  </div>
-</div>
 
 
   <div id="click-loader" style="display:none;">
     <img src="/image/icono.png" alt="Cargando..." />
   </div>
-<!-- Burbuja superior derecha solo con texto -->
-<a href="https://w3uqunyst2.zite.so" target="_blank" class="top-oval-bubble-text" title="Únete a nuestra comunidad">
-  Nuestra comunidad
-</a>
+  <!-- Burbuja superior derecha solo con texto -->
+  <a href="https://w3uqunyst2.zite.so" target="_blank" class="top-oval-bubble-text" title="Únete a nuestra comunidad">
+    Nuestra comunidad
+  </a>
 
   <script src="main.js"></script>
   <script>
@@ -110,30 +111,31 @@
         bubbleContainer.classList.toggle("active");
       });
     });
-      // ------------------------------
-  // BURBUJA FLOTANTE DE CONTACTO
-  // ------------------------------
-  function toggleBubbles() {
-    const options = document.querySelectorAll('.bubble-option');
-    const icon = document.getElementById('toggleIcon');
+    // ------------------------------
+    // BURBUJA FLOTANTE DE CONTACTO
+    // ------------------------------
+    function toggleBubbles() {
+      const options = document.querySelectorAll('.bubble-option');
+      const icon = document.getElementById('toggleIcon');
 
-    if (!bubblesOpen) {
-      options.forEach((bubble, i) => {
-        bubble.style.bottom = `${80 + i * 60}px`;
-        bubble.classList.add('show');
-      });
-      icon.src = "";
-    } else {
-      options.forEach((bubble) => {
-        bubble.style.bottom = `20px`;
-        bubble.classList.remove('show');
-      });
-      icon.src = "";
+      if (!bubblesOpen) {
+        options.forEach((bubble, i) => {
+          bubble.style.bottom = `${80 + i * 60}px`;
+          bubble.classList.add('show');
+        });
+        icon.src = "";
+      } else {
+        options.forEach((bubble) => {
+          bubble.style.bottom = `20px`;
+          bubble.classList.remove('show');
+        });
+        icon.src = "";
+      }
+
     }
 
-  }
-
-  window.toggleBubbles = toggleBubbles;
+    window.toggleBubbles = toggleBubbles;
   </script>
 </body>
+
 </html>

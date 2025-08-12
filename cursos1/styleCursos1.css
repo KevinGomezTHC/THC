@@ -2152,3 +2152,19 @@ img.nc-img:hover,
 .extra-cursos {
     display: none;
 }
+@media (max-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* deja espacio para el botón */
+    min-height: 300px; /* asegura altura mínima */
+  }
+
+  .ver-mas-btn {
+    display: block;
+    margin-top: auto; /* empuja hacia abajo */
+    width: 100%; /* ancho completo en móvil */
+    font-size: 16px; /* más fácil de tocar */
+    padding: 10px;
+  }
+}
