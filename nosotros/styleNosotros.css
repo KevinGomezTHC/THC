@@ -524,4 +524,28 @@
   font-family: 'DM Serif Text', serif;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
+}.card-float {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white; /* o tu color de fondo */
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card-float .card-inner {
+  transform: none !important; /* evita el flip */
+}
+
+.card-float .card-img {
+  max-width: 100%;
+  max-height: 60%;
+  object-fit: cover;
 }
