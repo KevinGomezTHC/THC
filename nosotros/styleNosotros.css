@@ -324,9 +324,7 @@
     .about-section {
     padding: 0 1rem;
   }
-  .image-card{
-    transform: scale(0.30);
-  }
+
   .btn {
     width: 90%;
     max-width: 280px;
