@@ -169,9 +169,9 @@
                             video.load();
                             video.play();
                         }
-                        // Scroll hacia arriba en celular
+                        // Scroll al video en celular
                         if (window.innerWidth <= 768) {
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            video.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
                     };
                 });
