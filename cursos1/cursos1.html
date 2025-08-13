@@ -169,6 +169,10 @@
                             video.load();
                             video.play();
                         }
+                        // Scroll hacia arriba en celular
+                        if (window.innerWidth <= 768) {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
                     };
                 });
             }
