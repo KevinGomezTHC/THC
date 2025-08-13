@@ -25,7 +25,7 @@ html {
 }
 
 body {
-    background-color: var(--blanco);
+    background-color: black;
     font-family: 'DM Serif Text', serif;
     display: swap;
     background: var(--gris-claro);
@@ -1011,6 +1011,7 @@ img.nc-img:hover,
     display: flex;
     flex-direction: column;
     background-color: #000000;
+    margin-left: -30px;
 }
 
 
@@ -1027,6 +1028,7 @@ img.nc-img:hover,
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
+    margin-right: 90px;
 }
 
 .iso-text h2 {
@@ -2167,4 +2169,7 @@ img.nc-img:hover,
     font-size: 16px; /* más fácil de tocar */
     padding: 10px;
   }
+}
+body {
+    background-color: #000000;
 }
