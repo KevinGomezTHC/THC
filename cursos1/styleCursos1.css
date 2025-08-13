@@ -255,15 +255,18 @@ h6,
 }
 
 .modal-content {
-    background: #fff;
-    border-radius: 18px;
-    padding: 48px 48px 36px 48px;
-    max-width: 640px;
-    width: 95%;
-    box-shadow: 0 12px 40px rgba(233, 79, 55, 0.18), 0 2px 8px rgba(0, 0, 0, 0.10);
-    position: relative;
-    text-align: left;
-    animation: modalPop 0.3s;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  width: 90%;
+  max-width: 320px;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  transition: transform 0.3s ease;
 }
 
 @keyframes modalPop {
@@ -1658,16 +1661,16 @@ img.nc-img,
 }
 
 .modal-content {
-    background-color: #ff0000e0;
-    border-radius: 14px;
-    padding: 10px 20px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-    max-width: 300px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin: 30px auto;
+  background-color: #ff0000e0;
+  border-radius: 14px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 30px auto;
 }
 
 .modal-subtitulo {
@@ -1734,11 +1737,10 @@ img.nc-img,
   padding: 16px;
   width: 90%;
   max-width: 320px;
-  max-height: 92vh; /* <= clave para que no sobrepase la pantalla */
+  max-height: 92vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  overflow-y: auto;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', sans-serif;
   transition: transform 0.3s ease;
@@ -1787,7 +1789,6 @@ img.nc-img,
     background-color: #e0e0e0;
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1893,8 +1894,8 @@ img.nc-img,
 
 /* Estilo básico del botón */
 .ver-mas-btn {
-  margin: 30px auto;
-  padding: 12px 20px;
+  margin: 12px auto 0 auto; /* más arriba en ambas vistas */
+  padding: 10px 18px;
   background-color: #e94f37;
   color: #fff;
   border: none;
@@ -1902,115 +1903,27 @@ img.nc-img,
   font-size: 1rem;
   cursor: pointer;
   display: block;
+  width: auto;
+  min-width: 120px;
+  max-width: 90vw;
+  font-weight: bold;
 }
 
 .ver-mas-btn:hover {
   background-color: #c63c28;
 }
-/* Contenedor del flip */
-.curso-flip-card {
-  background-color: transparent;
-  width: 100%;
-  perspective: 1000px;
-}
 
-.curso-flip-inner {
-  position: relative;
-  width: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.curso-flip-card.flipped .curso-flip-inner {
-  transform: rotateY(180deg);
-}
-
-.curso-flip-front,
-.curso-flip-back {
-  position: absolute;
-  width: 100%;
-  backface-visibility: hidden;
-}
-
-.curso-flip-front {
-  z-index: 2;
-}
-
-.curso-flip-back {
-  transform: rotateY(180deg);
-}
-
-.ver-mas-btn {
-  margin-top: 1rem;
-  background-color: #e94f37;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* Móvil: mostrar ambos cursos */
-@media screen and (max-width: 768px) {
-  .curso-flip-card {
-    perspective: none;
-  }
-
-  .curso-flip-inner {
-    transform: none !important;
-  }
-
-  .curso-flip-front,
-  .curso-flip-back {
-    position: static;
-    transform: none;
-    backface-visibility: visible;
-  }
-
-  .ver-mas-btn {
-    display: none;
-  }
-}
-.oculto-curso {
-    display: none;
-    transition: all 0.3s ease;
-}
-
-.oculto-curso.visible {
-    display: block;
-}
-.extra-cursos {
-    display: none;
-}
-@media (max-width: 768px) {
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* deja espacio para el botón */
-    min-height: 300px; /* asegura altura mínima */
-  }
-
-  .ver-mas-btn {
-    display: block;
-    margin-top: auto; /* empuja hacia abajo */
-    width: 100%; /* ancho completo en móvil */
-    font-size: 16px; /* más fácil de tocar */
-    padding: 10px;
-  }
-}
-body {
-    background-color: #000000;
-}
-
+/* Móvil: formato compacto y margen superior */
 @media (max-width: 768px) {
   .ver-mas-btn {
+    margin: 8px auto 0 auto; /* aún más arriba en móvil */
     width: auto !important;
     min-width: 120px;
     max-width: 90vw;
     display: inline-block;
-    margin: 16px auto;
     font-size: 16px;
     padding: 10px 18px;
   }
+}body{
+    background-color: #000000;
 }
