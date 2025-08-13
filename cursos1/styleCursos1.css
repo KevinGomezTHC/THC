@@ -85,12 +85,6 @@ h6,
     color: var(--rojo);
     border: 2px solid var(--rojo);
 }
-
-.menu-btn:hover {
-    background: #ffa07a;
-    color: var(--blanco);
-}
-
 @media (max-width: 900px) {
     .hero-arrow-left {
         left: 8px;
@@ -125,10 +119,7 @@ h6,
     border: 2px solid var(--rojo);
 }
 
-.menu-btn:hover {
-    background: #ffa07a;
-    color: var(--blanco);
-}
+
 
 
 .hero-video {
@@ -218,37 +209,12 @@ h6,
     cursor: pointer;
     transition: background 0.2s;
 }
-
-.sn-mision {
-    background: #e94f37;
-    color: #fff;
-    position: center;
-}
-
-.sn-mision:hover {
-    background: #ffb7a8;
-    color: #e94f37;
-}
-
-.sn-vision {
-    background: #e94f37;
-    color: #fff;
-}
-
-.sn-vision:hover {
-    background: #ffb7a8;
-    color: #e94f37;
-}
-
 .sn-bartender {
     background: #e94f37;
     color: #fff;
 }
 
-.sn-bartender:hover {
-    background: #ffb7a8;
-    color: #e94f37;
-}
+
 
 .sn-verMas {
     background: #e94f37;
@@ -256,11 +222,6 @@ h6,
     text-decoration: none;
 }
 
-.sn-verMas:hover {
-    background: #ffb7a8;
-    color: #e94f37;
-    text-decoration: none;
-}
 
 .modal-close {
     width: 0;
@@ -329,9 +290,7 @@ h6,
     transition: color 0.2s;
 }
 
-.modal-close:hover {
-    color: #222;
-}
+
 
 .modal-subtitulo {
     color: #e94f37;
@@ -506,10 +465,7 @@ h6,
     transition: background 0.2s;
 }
 
-.af-btn:hover {
-    background: #ffb7a8;
-    color: #e94f37;
-}
+
 
 /* Nuestros Cursos */
 .nuestros-cursos {
@@ -569,9 +525,7 @@ h6,
     transition: box-shadow 0.2s;
 }
 
-.nc-card:hover {
-    box-shadow: 0 8px 32px rgba(233, 79, 55, 0.12);
-}
+
 
 .nc-icon {
     width: 48px;
@@ -675,10 +629,7 @@ h6,
     transition: background 0.2s;
 }
 
-.curso-btn:hover {
-    background: #ffb7a8;
-    color: #e94f37;
-}
+
 
 /* Animaciones generales */
 .fade-in {
@@ -739,19 +690,8 @@ h6,
     }
 }
 
-/* Tarjetas con efecto hover */
-.nc-card,
-.curso-card,
-.af-card {
-    transition: box-shadow 0.3s, transform 0.3s;
-}
 
-.nc-card:hover,
-.curso-card:hover,
-.af-card:hover {
-    box-shadow: 0 12px 32px rgba(233, 79, 55, 0.18);
-    transform: translateY(-8px) scale(1.03);
-}
+
 
 /* Botones animados */
 button,
@@ -761,12 +701,7 @@ button,
     transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
-button:hover,
-.curso-btn:hover,
-.af-btn:hover,
-.sn-btn:hover {
-    transform: scale(1.07);
-}
+
 
 
 
@@ -795,60 +730,9 @@ img.nc-img,
     transition: box-shadow 0.3s, transform 0.3s;
 }
 
-img.nc-img:hover,
-.curso-img:hover,
-.sn-img-main:hover,
-.sn-img-equipo:hover,
-.af-img:hover {
-    box-shadow: 0 8px 32px rgba(233, 79, 55, 0.18);
-    transform: scale(1.04) rotate(-2deg);
-}
 
-/* Animación para listas */
-.sn-listas ul li,
-.af-card ul li,
-.curso-info ul li {
-    position: relative;
-    left: -20px;
-    opacity: 0;
-    animation: listFadeIn 0.7s forwards;
-}
 
-.sn-listas ul li:nth-child(1),
-.af-card ul li:nth-child(1),
-.curso-info ul li:nth-child(1) {
-    animation-delay: 0.1s;
-}
 
-.sn-listas ul li:nth-child(2),
-.af-card ul li:nth-child(2),
-.curso-info ul li:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.sn-listas ul li:nth-child(3),
-.af-card ul li:nth-child(3),
-.curso-info ul li:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.sn-listas ul li:nth-child(4),
-.af-card ul li:nth-child(4),
-.curso-info ul li:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.sn-listas ul li:nth-child(5),
-.af-card ul li:nth-child(5),
-.curso-info ul li:nth-child(5) {
-    animation-delay: 0.5s;
-}
-
-.sn-listas ul li:nth-child(6),
-.af-card ul li:nth-child(6),
-.curso-info ul li:nth-child(6) {
-    animation-delay: 0.6s;
-}
 
 @keyframes listFadeIn {
     to {
@@ -1044,38 +928,6 @@ img.nc-img:hover,
     max-width: 400px;
     /* ajusta tamaño del logo si es necesario */
 }
-
-
-
-.vision {
-    background-color: #e0dfdf;
-    /* rojo coral */
-}
-
-.vision:hover {
-    background-color: #fcfcfc;
-    /* rojo coral */
-}
-
-.studio {
-    background-color: #d81515;
-    /* azul oscuro */
-}
-
-.studio:hover {
-    background-color: #f81717;
-    /* azul oscuro */
-}
-
-
-
-.iso-box:hover {
-    transform: scale(1.02);
-    z-index: 2;
-}
-
-
-
 .bg-video {
     position: absolute;
     top: 0;
@@ -1085,9 +937,6 @@ img.nc-img:hover,
     object-fit: contain;
     z-index: 0;
 }
-
-
-
 .iso-text h2 {
     flex: 1;
     color: black;
@@ -1386,20 +1235,111 @@ img.nc-img:hover,
     background-color: #000000;
 }
 
-.iso-box.studio:hover {
-    background-color: #000000d7;
-}
+
 .iso-box.vision {
     background-color: #000000;
 }
 
-.iso-box.vision:hover {
-    background-color: #000000d7;
-}
 
 .iso-box.expandida .vision-expandido .modal-content {
     min-width: 380px;
     max-width: 420px;
+}
+
+@media (max-width: 768px) {
+    .isometric-section {
+        display: flex;
+        min-height: 100vh;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .iso-left {
+        height: 360px;
+        padding: 0;
+        position: relative;
+        flex: none;
+        width: 100%;
+    }
+
+    .bg-video {
+        height: 100%;
+        object-fit: fill;
+    }
+
+    .iso-text {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        color: rgb(8, 8, 8);
+        font-size: 1rem;
+        background: rgb(255, 255, 255);
+        padding: 12px 16px;
+        border-radius: 8px;
+        text-align: left;
+        line-height: 1.5;
+    }
+
+    .iso-logo {
+        width: 90px;
+        height: auto;
+        margin-bottom: 8px;
+    }
+
+    .iso-right {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        gap: 0;
+    }
+
+
+
+    .sn-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .sn-btn {
+        width: 90%;
+        max-width: 200px;
+        font-size: 0.9rem;
+    }
+
+    .sn-bartender {
+        width: 80%;
+        margin-top: 16px;
+        font-size: 1rem;
+    }
+
+    .expand-white-btn {
+        width: 80%;
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        margin-top: 10px;
+    }
+}
+
+.iso-box.expandida .vision-expandido {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 40px 20px;
+}
+
+.iso-box.expandida .vision-expandido .modal-content {
+    min-width: 340px;
+    max-width: 420px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
 }
 
 @media (max-width: 768px) {
@@ -1541,21 +1481,6 @@ img.nc-img:hover,
     transition: all 0.3s ease;
     border: none;
 }
-
-.transition-btn:hover {
-    background-color: #ffb7a8;
-    color: #e94f37;
-    transform: translateX(5px);
-    /* Efecto slide */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Si quieres usar slide-right-white como una clase extra opcional: */
-.slide-right-white:hover {
-    background-color: #fff !important;
-    color: #e94f37 !important;
-}
-
 /* Estilo base para burbujas */
 .bubble {
     position: fixed;
@@ -2076,30 +2001,4 @@ img.nc-img:hover,
 }
 body {
     background-color: #000000;
-}
-
-@media (max-width: 768px) {
-  .ver-mas-btn {
-    width: auto !important;
-    min-width: 120px;
-    max-width: 90vw;
-    display: inline-block;
-    margin: 16px auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .iso-left .iso-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-    width: 100%;
-  }
-  .iso-left .iso-text {
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
 }
