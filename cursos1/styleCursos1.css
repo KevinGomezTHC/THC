@@ -1952,6 +1952,7 @@ img.nc-img,
 }.ver-mas-btn {
   position: relative;
   z-index: 10;
+
 }@media (max-width: 768px) {
   .curso-btn {
     font-size: 0.85rem;
@@ -1961,4 +1962,18 @@ img.nc-img,
     display: block;
     align-self: center;
   }
+}.curso-btn {
+  background-color: #e94f37;
+  color: #ffffff;
+  border: none;
+  border-radius: 18px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+  margin: 10px auto 0 auto; /* Centrado horizontal */
+  display: block;
+  align-self: center;
 }
