@@ -1,4 +1,4 @@
-  body {
+body {
     margin: 0;
     font-family: 'DM Serif Text', serif;
     overflow: hidden;
@@ -328,4 +328,14 @@
       color: white
     }
   }
+.conocenos-box.rojo .content,
+.conocenos-box.rojo .card-back .content {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.conocenos-box.rojo a,
+.conocenos-box.rojo strong {
+  color: #fff;
+}
 
