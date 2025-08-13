@@ -2002,3 +2002,15 @@ img.nc-img,
 body {
     background-color: #000000;
 }
+
+@media (max-width: 768px) {
+  .ver-mas-btn {
+    width: auto !important;
+    min-width: 120px;
+    max-width: 90vw;
+    display: inline-block;
+    margin: 16px auto;
+    font-size: 16px;
+    padding: 10px 18px;
+  }
+}
