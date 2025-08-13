@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="styleSedes.css" />
   <link rel="icon" href="/image/icono.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -36,16 +35,16 @@
         </div>
         <div class="card-back">
           <div class="content">
-            <img src="../image/sedes/SedeCostaRicaA.jpeg" alt="Costa Rica" class="card-img card-img-back" />
+            <img src="../image/sedes/SedeCostaRicaA.jpeg" alt="Costa Rica" class="card-img-back" />
             <p><strong>Liberia</strong></p>
             <p><strong>Telefono:</strong> (+506) 6474 5123</p>
             <p><strong>Dirección:</strong> Proyecto Solárium, frente al aeropuerto Daniel Oduber. De la pops 100 sur oficina 13 segunda planta.</p>
+            <button class="toggle-sedes">Volver</button>
             <div>
               <a href="https://wa.me/573203852499" target="_blank" class="whatsapp-bubble bubble-cr">
                 <img src="/image/logos/logoWhatsapp.png" alt="WhatsApp Costa Rica">
               </a>
             </div>
-            <button class="toggle-sedes">Volver</button>
           </div>
         </div>
       </div>
@@ -64,17 +63,16 @@
         </div>
         <div class="card-back">
           <div class="content">
-            <img src="../image/sedes/sedeBogotaN.jpeg" alt="Bogotá" class="card-img card-img-back" />
-            <p><a href="../image/logos/logoEmail.png"></a> info@thehospitalitycenter-latam.com</p>
+            <img src="../image/sedes/sedeBogotaN.jpeg" alt="Bogotá" class="card-img-back" />
             <p><strong>Sede Galerias</strong></p>
             <p><strong>Telefono:</strong> (+57) 324 3500719</p>
             <p><strong>Dirección:</strong> Sede Galerias Cl. 57 #24-8.</p>
+            <button class="toggle-sedes">Volver</button>
             <div>
               <a href="https://wa.me/573203852499" target="_blank" class="whatsapp-bubble bubble-bogota">
                 <img src="/image/logos/logoWhatsapp.png" alt="WhatsApp Bogotá">
               </a>
             </div>
-            <button class="toggle-sedes">Volver</button>
           </div>
         </div>
       </div>
@@ -93,16 +91,16 @@
         </div>
         <div class="card-back">
           <div class="content">
-            <img src="../image/sedes/sedeMedellin.jpeg" alt="Medellín" class="card-img card-img-back alejamiento" />
+            <img src="../image/sedes/sedeMedellin.jpeg" alt="Medellín" class="card-img-back alejamiento" />
             <p><strong>Correo:</strong> info@thehospitalitycenter-latam.com</p>
             <p><strong>Telefono:</strong> (+57) 324 4987120</p>
             <p><strong>Dirección:</strong> Calle 49 # 41-35, segundo piso. Al frente de la Estación Tranvía Pabellón del Agua.</p>
+            <button class="toggle-sedes">Volver</button>
             <div>
               <a href="https://wa.me/573203852499" target="_blank" class="whatsapp-bubble bubble-medellin">
                 <img src="/image/logos/logoWhatsapp.png" alt="WhatsApp Medellín">
               </a>
             </div>
-            <button class="toggle-sedes">Volver</button>
           </div>
         </div>
       </div>
@@ -121,11 +119,9 @@
           e.preventDefault();
           const href = this.getAttribute("href");
           transition.className = "";
-
           if (this.classList.contains("slide-right-red")) {
             transition.classList.add("slide-left-red", "active");
           }
-
           setTimeout(() => {
             window.location.href = href;
           }, 700);
@@ -143,29 +139,22 @@
           });
         });
       });
+
+      // Verifica si viene de fuera del sitio y reemplaza por index
+      const isInternalReferrer = document.referrer.includes(location.hostname);
+      if (!isInternalReferrer) {
+        history.replaceState(null, '', 'index.html');
+      }
+
+      // Al presionar "atrás"
+      window.addEventListener('popstate', function () {
+        transition.className = "";
+        transition.classList.add("slide-left-white", "active");
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 700);
+      });
     });
- document.addEventListener("DOMContentLoaded", () => {
-    // Verifica si viene de fuera del sitio y reemplaza por index
-    const isInternalReferrer = document.referrer.includes(location.hostname);
-    if (!isInternalReferrer) {
-      history.replaceState(null, '', 'index.html');
-    }
-
-    // Al presionar "atrás"
-    window.addEventListener('popstate', function () {
-      const transition = document.getElementById("page-transition");
-
-      // Limpia clases anteriores y aplica animación
-      transition.className = "";
-      transition.classList.add("slide-left-white", "active");
-
-      // Espera que termine la animación y redirige
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 700); // Tiempo de animación en ms (ajusta si tu CSS dura más)
-    });
-  });
   </script>
 </body>
-
 </html>

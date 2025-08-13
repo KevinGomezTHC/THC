@@ -80,6 +80,15 @@ body {
   }
 
   .toggle-sedes {
+  margin-top: 16px;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  width: auto;
+  height: auto;
+}
+
+  .toggle-sedes {
     margin-top: 20px;
     padding: 10px 16px;
     font-size: 14px;
@@ -337,5 +346,28 @@ body {
 .conocenos-box.rojo a,
 .conocenos-box.rojo strong {
   color: #fff;
+}
+.card-back .content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Cambiado de center a stretch */
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.card-back .card-img-back {
+  width: 100%;
+  height: 180px;         /* Ajusta la altura según tu preferencia */
+  max-width: 100%;
+  opacity: 0.40;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  position: static;
+  pointer-events: none;
+  z-index: 1;
+  display: block;
 }
 
