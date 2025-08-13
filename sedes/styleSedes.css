@@ -370,4 +370,20 @@ body {
   z-index: 1;
   display: block;
 }
-
+@media (max-width: 768px) {
+  .conocenos-box {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .card-front,
+  .card-back {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .card-back .content,
+  .card-front .content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100%;
+  }
+}
