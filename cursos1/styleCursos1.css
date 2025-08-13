@@ -621,15 +621,19 @@ h6,
 }
 
 .curso-btn {
-    background: #e94f37;
-    color: #fff;
+    background-color: #e94f37;
+    color: #ffffff;
     border: none;
-    padding: 8px 22px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
+    border-radius: 18px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+    align-self: center;
+    margin: 10px auto 0 auto; /* Centrado horizontal */
+    display: block;
 }
 
 
@@ -1772,7 +1776,8 @@ img.nc-img,
 @media (max-width: 768px) {
   .iso-right {
     align-items: flex-end !important;
-    padding-right: 18px;
+    padding-right: 0px;
+    padding-left: 20px;
   }
   .iso-box {
     margin-right: 0;
@@ -1947,4 +1952,13 @@ img.nc-img,
 }.ver-mas-btn {
   position: relative;
   z-index: 10;
+}@media (max-width: 768px) {
+  .curso-btn {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    border-radius: 25px;
+    margin: 10px auto 0 auto; /* Centrado horizontal en móvil */
+    display: block;
+    align-self: center;
+  }
 }
