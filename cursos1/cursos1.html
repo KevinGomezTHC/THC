@@ -31,7 +31,7 @@
                                 <li>Licores e ingredientes</li>
                                 <li>Destilación y fermentación</li>
                             </ul>
-                            <button class="curso-btn">Inscríbete</button>
+                            <button class="curso-btn">Saber más</button>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                                 <li>Montaje de mesas</li>
                                 <li>Ciclo completo de servicio</li>
                             </ul>
-                            <button class="curso-btn">Inscríbete</button>
+                            <button class="curso-btn">Saber más</button>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                                     <li>Términos de ocupación</li>
                                     <li>Control de llaves</li>
                                 </ul>
-                                <button class="curso-btn">Inscríbete</button>
+                                <button class="curso-btn">Saber más</button>
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                                     <li>Limpieza profunda</li>
                                     <li>Tendido de camas</li>
                                 </ul>
-                                <button class="curso-btn">Inscríbete</button>
+                                <button class="curso-btn">Saber más</button>
                             </div>
                         </div>
                     </div>
@@ -150,37 +150,56 @@
             mainBubble.addEventListener("click", () => {
                 bubbleContainer.classList.toggle("active");
             });
-        });
 
-        let mostrandoAlternativos = false;
-        let cursosOriginales = [];
+            // Función para asignar eventos a los botones
+            function asignarEventosBotonesCurso() {
+                const video = document.querySelector('.bg-video');
+                const videosPorCurso = {
+                    'Bartender': '../image/videoBartender.mp4',
+                    'Mesero': '../image/Bienvenidos al curso de Mesero.mp4',
+                    'Recepcionista (Front desk)': '../image/videoRecepcionista.mp4',
+                    'Housekeeping': '../image/videoHousekeeping.mp4'
+                };
 
-        function mostrarCursos() {
-            const contenedor = document.querySelector('.iso-right');
-            const cursosVisibles = document.querySelectorAll('.curso-inicial');
-            const cursosExtra = document.querySelectorAll('.extra-cursos .iso-box');
-            const btn = document.querySelector('.ver-mas-btn');
-
-            if (!mostrandoAlternativos) {
-                // Guardar los originales antes de reemplazar
-                cursosOriginales = Array.from(cursosVisibles).map(curso => curso.cloneNode(true));
-
-                // Reemplazar
-                cursosVisibles[0].replaceWith(cursosExtra[0].cloneNode(true));
-                cursosVisibles[1].replaceWith(cursosExtra[1].cloneNode(true));
-
-                btn.textContent = 'Ver anteriores';
-                mostrandoAlternativos = true;
-            } else {
-                // Restaurar originales
-                const actuales = document.querySelectorAll('.iso-right .iso-box');
-                actuales[0].replaceWith(cursosOriginales[0]);
-                actuales[1].replaceWith(cursosOriginales[1]);
-
-                btn.textContent = 'Ver más';
-                mostrandoAlternativos = false;
+                document.querySelectorAll('.curso-btn').forEach(btn => {
+                    btn.onclick = function () {
+                        const curso = this.closest('.modal-content').querySelector('h2').textContent.trim();
+                        if (videosPorCurso[curso]) {
+                            video.src = videosPorCurso[curso];
+                            video.load();
+                            video.play();
+                        }
+                    };
+                });
             }
-        }
+
+            asignarEventosBotonesCurso(); // Inicial
+
+            let mostrandoAlternativos = false;
+            let cursosOriginales = [];
+
+            window.mostrarCursos = function () {
+                const contenedor = document.querySelector('.iso-right');
+                const cursosVisibles = document.querySelectorAll('.curso-inicial');
+                const cursosExtra = document.querySelectorAll('.extra-cursos .iso-box');
+                const btn = document.querySelector('.ver-mas-btn');
+
+                if (!mostrandoAlternativos) {
+                    cursosOriginales = Array.from(cursosVisibles).map(curso => curso.cloneNode(true));
+                    cursosVisibles[0].replaceWith(cursosExtra[0].cloneNode(true));
+                    cursosVisibles[1].replaceWith(cursosExtra[1].cloneNode(true));
+                    btn.textContent = 'Ver anteriores';
+                    mostrandoAlternativos = true;
+                } else {
+                    const actuales = document.querySelectorAll('.iso-right .iso-box');
+                    actuales[0].replaceWith(cursosOriginales[0]);
+                    actuales[1].replaceWith(cursosOriginales[1]);
+                    btn.textContent = 'Ver más';
+                    mostrandoAlternativos = false;
+                }
+                asignarEventosBotonesCurso(); // Reasignar eventos después de cambiar cursos
+            };
+        });
     </script>
 </body>
 </html>
