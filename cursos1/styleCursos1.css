@@ -1403,102 +1403,6 @@ img.nc-img:hover,
 }
 
 @media (max-width: 768px) {
-    .isometric-section {
-        display: flex;
-        min-height: 100vh;
-        height: auto;
-        flex-wrap: wrap;
-    }
-
-    .iso-left {
-        height: 360px;
-        padding: 0;
-        position: relative;
-        flex: none;
-        width: 100%;
-    }
-
-    .bg-video {
-        height: 100%;
-        object-fit: fill;
-    }
-
-    .iso-text {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-        color: rgb(8, 8, 8);
-        font-size: 1rem;
-        background: rgb(255, 255, 255);
-        padding: 12px 16px;
-        border-radius: 8px;
-        text-align: left;
-        line-height: 1.5;
-    }
-
-    .iso-logo {
-        width: 90px;
-        height: auto;
-        margin-bottom: 8px;
-    }
-
-    .iso-right {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        width: 100%;
-        gap: 0;
-    }
-
-
-
-    .sn-btns {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        width: 100%;
-        align-items: center;
-    }
-
-    .sn-btn {
-        width: 90%;
-        max-width: 200px;
-        font-size: 0.9rem;
-    }
-
-    .sn-bartender {
-        width: 80%;
-        margin-top: 16px;
-        font-size: 1rem;
-    }
-
-    .expand-white-btn {
-        width: 80%;
-        font-size: 0.9rem;
-        padding: 8px 12px;
-        margin-top: 10px;
-    }
-}
-
-.iso-box.expandida .vision-expandido {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 30px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 40px 20px;
-}
-
-.iso-box.expandida .vision-expandido .modal-content {
-    min-width: 340px;
-    max-width: 420px;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-}
-
-@media (max-width: 768px) {
     .carousel-container {
         position: relative;
         width: 100%;
@@ -2172,4 +2076,30 @@ img.nc-img:hover,
 }
 body {
     background-color: #000000;
+}
+
+@media (max-width: 768px) {
+  .ver-mas-btn {
+    width: auto !important;
+    min-width: 120px;
+    max-width: 90vw;
+    display: inline-block;
+    margin: 16px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .iso-left .iso-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    width: 100%;
+  }
+  .iso-left .iso-text {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
 }
