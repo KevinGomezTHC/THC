@@ -358,7 +358,7 @@ body {
 
 .card-back .card-img-back {
   width: 100%;
-  height: 180px;         /* Ajusta la altura según tu preferencia */
+  height: 250px;         /* Ajusta la altura según tu preferencia */
   max-width: 100%;
   opacity: 0.40;
   object-fit: cover;
