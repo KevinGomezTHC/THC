@@ -1071,6 +1071,7 @@ img.nc-img:hover,
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
+
 }
 
 .iso-text h2 {
@@ -1408,6 +1409,7 @@ img.nc-img:hover,
         align-items: flex-end;
         justify-content: flex-start;
         gap: 20px;
+                
     }
 
     .iso-text {
@@ -1896,36 +1898,6 @@ img.nc-img:hover,
 }
 
 }
-/* HEADER */
-.main-header {
-  width: 100%;
-  background: transparent;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  box-shadow: none;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 32px;
-  transition: background 0.3s, box-shadow 0.3s;
-}
-
-.main-nav {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Alinea todo a la derecha */
-  padding: 0 32px;
-}
-.main-header,
-.main-header * {
-  color: #fff !important;
-  fill: #fff !important;
-}
 
 .main-nav ul {
   display: flex;
@@ -2062,13 +2034,37 @@ img.nc-img:hover,
     padding: 10px 8px;
     text-align: center;
   }
-  .main-nav {
+@media (max-width: 900px) {
+  .main-header {
+    height: auto;
     flex-direction: column;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .main-nav {
+    flex-direction: row; /* Cambia a fila */
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     padding: 0 8px;
   }
   .main-nav ul {
+    flex-direction: row; /* Cambia a fila */
     gap: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
+  .header-btn-academia {
+    margin-top: 0;
+    width: auto;
+    text-align: center;
+    padding: 12px 18px;
+  }
+}
   .header-btn-academia {
     margin-top: 12px;
     width: 100%;
@@ -2184,5 +2180,28 @@ img.nc-img:hover,
   .header-logo,
   .header-title {
     display: none !important;
+  }
+}@media (max-width: 600px) {
+    .iso-right {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap: 0; /* Sin espacio entre los bloques */
+    width: 100%;
+    justify-content: center;
+    align-items: stretch;
+    display: flex;
+  }
+  .iso-box {
+    flex: 1 1 50%;
+    min-width: 160px;
+    max-width: 50vw;
+    margin: 0; /* Elimina cualquier margen */
+    padding: 18px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0; /* Opcional: elimina bordes redondeados entre los bloques */
   }
 }
