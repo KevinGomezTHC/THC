@@ -1004,7 +1004,7 @@ img.nc-img:hover,
 
 .isometric-section {
     display: flex;
-    height: 90vh;
+    height: 100vh;
     margin-top: -70px;
 }
 
@@ -1085,7 +1085,7 @@ img.nc-img:hover,
 }
 
 .iso-left img {
-    max-width: 400px;
+    max-width: 300px;
     /* ajusta tamaño del logo si es necesario */
 }
 
