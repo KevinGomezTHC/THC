@@ -1004,7 +1004,7 @@ img.nc-img:hover,
 
 .isometric-section {
     display: flex;
-    height: 110vh;
+    height: 100vh;
     margin-top: -70px;
 }
 
@@ -2044,9 +2044,6 @@ img.nc-img:hover,
     padding: 10px 8px;
     text-align: center;
   }
-  .isometric-section {
-    height: 100vh;
-}
   .main-nav {
     flex-direction: row; /* Cambia a fila */
     width: 100%;
