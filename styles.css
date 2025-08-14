@@ -2044,6 +2044,10 @@ img.nc-img:hover,
     padding: 10px 8px;
     text-align: center;
   }
+  .isometric-section {
+    
+    height: 100vh;
+}
   .main-nav {
     flex-direction: row; /* Cambia a fila */
     width: 100%;
