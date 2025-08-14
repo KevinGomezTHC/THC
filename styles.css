@@ -1004,7 +1004,7 @@ img.nc-img:hover,
 
 .isometric-section {
     display: flex;
-    height: 110vh;
+    height: 100vh;
     margin-top: -70px;
 }
 
@@ -1403,7 +1403,7 @@ img.nc-img:hover,
     }
 
     .iso-left {
-        height: 500px;
+        height: 400px;
         position: relative;
         padding: 0;
         display: flex;
@@ -2286,7 +2286,6 @@ img.nc-img:hover,
   font-weight: bold;
 }
 
-/* ===== 📱 MÓVIL ===== */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
