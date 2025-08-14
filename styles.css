@@ -1004,7 +1004,7 @@ img.nc-img:hover,
 
 .isometric-section {
     display: flex;
-    height: 100vh;
+    height: 110vh;
     margin-top: -70px;
 }
 
@@ -1403,7 +1403,7 @@ img.nc-img:hover,
     }
 
     .iso-left {
-        height: 400px;
+        height: 500px;
         position: relative;
         padding: 0;
         display: flex;
