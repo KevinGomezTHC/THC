@@ -100,4 +100,13 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 
 
+});// Animaciones AOS
+AOS.init({
+    duration: 1000,
+    once: true
+});
+
+// Efecto header al hacer scroll
+window.addEventListener('scroll', () => {
+    document.getElementById('main-header').classList.toggle('scrolled', window.scrollY > 50);
 });

@@ -1004,7 +1004,8 @@ img.nc-img:hover,
 
 .isometric-section {
     display: flex;
-    height: 100vh;
+    height: 110vh;
+    margin-top: -70px;
 }
 
 .iso-left {
@@ -1674,7 +1675,9 @@ img.nc-img:hover,
 }
 .transition-btn {
     display: inline-block;
-    padding: 10px 20px;
+    text-align: center;
+    min-width: 180px;
+    padding: 10px 15px;
     background-color: #e94f37; /* Rojo original */
     color: #fff;
     text-decoration: none;
@@ -2091,7 +2094,15 @@ img.nc-img:hover,
   justify-content: space-between; /* Cambiado para espacio entre logo y nav */
   padding: 0 32px;
 }
-
+.header-img{
+    min-height: 5px;
+    min-width: 5px;
+    max-height: 44px;
+    max-width: 44px;
+    height: 44px;
+    width: 44px;
+    display: flex;
+}
 .header-left {
   display: flex;
   align-items: center;
@@ -2106,26 +2117,13 @@ img.nc-img:hover,
   color: #fff !important;
   fill: #fff !important;
 }@media (max-width: 900px) {
-  .header-logo {
+  .iso-logo {
     display: none !important;
   }
   .header-title{
     display: none !important;
  
 }
-}.nav-link-header {
-  color: #e94f37 !important;
-  background: none;
-  border: none;
-  font-family: 'DM Serif Text', serif;
-  font-size: 1.15rem;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0 18px;
-  transition: color 0.2s;
-  box-shadow: none;
-  border-radius: 0;
-  cursor: pointer;
 }
 
 .nav-link-header:hover,
@@ -2155,20 +2153,7 @@ img.nc-img:hover,
 }
 
 /* Enlaces rojos en header cuando no hay scroll */
-.nav-link-header {
-  color: #e94f37 !important;
-  background: none;
-  border: none;
-  font-family: 'DM Serif Text', serif;
-  font-size: 1.15rem;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0 18px;
-  transition: color 0.2s;
-  box-shadow: none;
-  border-radius: 0;
-  cursor: pointer;
-}
+
 .nav-link-header:hover,
 .nav-link-header:focus {
   text-decoration: underline;
@@ -2203,5 +2188,138 @@ img.nc-img:hover,
     display: flex;
     flex-direction: column;
     border-radius: 0; /* Opcional: elimina bordes redondeados entre los bloques */
+  }
+}
+/* HEADER BASE */
+.main-header {
+  width: 100%;
+  background: #fff; /* Siempre blanco */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: top 0.3s ease; /* Para ocultarlo en móvil */
+}
+
+
+
+.nav-link-header:hover {
+  color: #c63c28 !important;
+  text-shadow: 0 0 1px rgba(0,0,0,0.05);
+}
+
+/* Cuando hay scroll - solo cambia sombra */
+.main-header.scrolled {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* Ocultar en móvil cuando se hace scroll hacia abajo */
+@media (max-width: 900px) {
+  .main-header.hide-on-scroll {
+    top: -80px; /* Lo mueve hacia arriba */
+  }
+}
+
+/* HEADER */
+#main-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    margin-top: 0px;
+}
+#main-header.scrolled {
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(5px);
+}
+.botones-header {
+    display: flex;
+    align-items: center;
+}.nav-link-header{
+    color: rgb(255, 0, 0);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}/* Estilos del header */
+#main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Botón hamburguesa (escritorio oculto) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Menú en escritorio */
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* ===== 📱 MÓVIL ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+.nav-menu a {
+  color: white;
+  
+}
+  /* Menú oculto por defecto */
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: transparent;
+    width: 220px;
+    border-left: 1px solid transparent;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-menu li {
+    border-bottom: 1px solid transparent;
+  }
+
+  /* Mostrar menú al activar */
+  .nav-menu.active {
+    transform: translateX(0);
   }
 }

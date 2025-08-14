@@ -9,24 +9,38 @@
   <link rel="icon" type="image/png" href="/image/icono.png" />
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+  <!-- overlay de transición (no se volverá a crear en JS) -->
   <div id="page-transition"></div>
 
-  <header class="main-header">
-    <div class="header-left">
-      <img src="/image/icono.png" alt="Logo THC" class="header-logo">
-      <span class="header-title">The Hospitality Center</span>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=01d850cc-ee63-4325-94d8-668dfe91e970"
-            class="nav-link-header">Academia virtual</a></li>
-        <li><a href="https://w3uqunyst2.zite.so" class="nav-link-header">Nuestra comunidad</a></li>
-      </ul>
-    </nav>
-  </header>
+<header id="main-header">
+  <div class="botones-header">
+    <a href="index.html" class="header-img">
+      <img src="image/thc-logo.png" alt="Logo THC">
+    </a>
+  </div>
+
+  <!-- Botón hamburguesa -->
+  <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+  <!-- Menú de navegación -->
+  <nav class="nav-menu">
+    <ul>
+      <li>
+        <a href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=01d850cc-ee63-4325-94d8-668dfe91e970"
+           class="nav-link-header">Academia virtual</a>
+      </li>
+      <li>
+        <a href="https://w3uqunyst2.zite.so" class="nav-link-header">Nuestra comunidad</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    
 
   <section class="isometric-section">
     <div class="iso-left">
@@ -46,9 +60,8 @@
     <div class="iso-right">
       <div class="iso-box vision">
         <img src="/image/icono.png" alt="Diseño isométrico" class="iso-illustration" />
-        <h4>Conoce nuestros cursos</h4>
-        <p></p><br />
-        <!-- <a href="cursos/cursos.html" class="transition-btn slide-right-white">Ver más</a>-->
+        <h4>¡Inscríbete hoy y prepárate para un futuro exitoso!</h4>
+        <p>Conoce nuestros cursos</p><br />
         <a href="cursos1/cursos1.html" class="transition-btn slide-right-white">Ver más</a>
       </div>
 
@@ -61,6 +74,7 @@
       </div>
     </div>
   </section>
+
   <!-- Burbuja flotante con redes -->
   <div class="floating-bubble-container">
     <div class="sub-bubbles" id="sub-bubbles">
@@ -80,19 +94,20 @@
     </div>
   </div>
 
-
   <div id="click-loader" style="display:none;">
     <img src="/image/icono.png" alt="Cargando..." />
   </div>
-  <!-- Burbuja superior derecha solo con texto -->
-
 
   <script src="main.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const transition = document.createElement("div");
-      transition.id = "page-transition";
-      document.body.appendChild(transition);
+      // ---------- Transiciones de página ----------
+      const transition = document.getElementById("page-transition") || (() => {
+        const el = document.createElement("div");
+        el.id = "page-transition";
+        document.body.appendChild(el);
+        return el;
+      })();
 
       document.querySelectorAll("a.transition-btn").forEach(link => {
         link.addEventListener("click", function (e) {
@@ -110,44 +125,67 @@
             transition.classList.add("slide-left-red", "active");
           }
 
-          setTimeout(() => {
-            window.location.href = href;
-          }, 700);
+          setTimeout(() => { window.location.href = href; }, 700);
         });
       });
 
+      // ---------- Burbuja flotante ----------
       const mainBubble = document.getElementById("main-bubble");
       const bubbleContainer = document.querySelector(".floating-bubble-container");
-
-      mainBubble.addEventListener("click", () => {
-        bubbleContainer.classList.toggle("active");
-      });
-    });
-    // ------------------------------
-    // BURBUJA FLOTANTE DE CONTACTO
-    // ------------------------------
-    function toggleBubbles() {
-      const options = document.querySelectorAll('.bubble-option');
-      const icon = document.getElementById('toggleIcon');
-
-      if (!bubblesOpen) {
-        options.forEach((bubble, i) => {
-          bubble.style.bottom = `${80 + i * 60}px`;
-          bubble.classList.add('show');
+      if (mainBubble && bubbleContainer) {
+        mainBubble.addEventListener("click", () => {
+          bubbleContainer.classList.toggle("active");
         });
-        icon.src = "";
-      } else {
-        options.forEach((bubble) => {
-          bubble.style.bottom = `20px`;
-          bubble.classList.remove('show');
-        });
-        icon.src = "";
       }
 
-    }
+      // ---------- Header: blanco al hacer scroll (desktop) + ocultar en móvil ----------
+      const header = document.querySelector('.main-header');
+      let lastScroll = window.scrollY;
+      const MOBILE_BP = 900;
+      const THRESHOLD = 10;   // a partir de aquí se considera "scrolled"
 
-    window.toggleBubbles = toggleBubbles;
-  </script>
+      const handleScroll = () => {
+        const y = window.scrollY;
+        const isMobile = window.innerWidth <= MOBILE_BP;
+
+        // 1) Estado "scrolled" (fondo blanco) para cualquier viewport
+        if (y > THRESHOLD) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+
+        // 2) En móvil: ocultar al bajar y mostrar al subir
+        if (isMobile) {
+          if (y > lastScroll && y > 70) {
+            header.classList.add('hide-on-scroll');
+          } else {
+            header.classList.remove('hide-on-scroll');
+          }
+        } else {
+          // por si venías de móvil, asegúrate de mostrarlo en desktop
+          header.classList.remove('hide-on-scroll');
+        }
+
+        lastScroll = y;
+      };
+
+      // Estado inicial correcto al cargar
+      handleScroll();
+
+      // Listeners
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('resize', handleScroll);
+    });
+  </script><script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
+
 
   <footer class="main-footer">
     <div class="footer-top">
@@ -215,5 +253,4 @@
     </div>
   </footer>
 </body>
-
 </html>
