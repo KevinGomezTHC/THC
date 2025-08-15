@@ -24,6 +24,7 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
+      overflow-x: hidden;
     }
 
     .section-title {
@@ -756,4 +757,46 @@
 .main-header * {
   color: #fff !important;
   fill: #fff !important;
+}.fb-container {
+  min-width: 500px; /* o lo que quieras como límite */
+  margin: 0 auto;   /* centrar */
+}
+
+.fb-container iframe {
+  display: block;
+  width: 100%;
+}
+
+
+.partners-section {
+  overflow: hidden;
+  margin-left: 10px;
+  margin-right: 50px;
+  margin-bottom: 70px;
+  border-left: 80px ;
+}
+.partners-track {
+  overflow: hidden;
+  display: flex;
+  animation: scrollPartners 50s linear infinite; /* más lento */
+}
+
+.partners-track img {
+  height: 80px;
+  margin: 0 25px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0; /* evita que se achiquen */
+}
+
+.partners-track img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes scrollPartners {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.3333%); /* porque son 3 bloques */
+  }
 }

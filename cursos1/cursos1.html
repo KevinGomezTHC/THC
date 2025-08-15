@@ -13,7 +13,10 @@
 </head>
 
 <body>
-    <div id="page-transition"></div>
+  <!-- Transición -->
+  <div id="page-transition"></div>
+    <a href="../index.html" class="transition-btn slide-right-red">✖</a>
+    <a href="../index.html "></a>
 
     <section class="isometric-section">
         <div class="iso-right">
@@ -140,8 +143,6 @@
         <img src="/image/icono.png" alt="Cargando..." />
     </div>
 
-    <a href="../index.html" class="top-oval-bubble-text" title="Atrás">X</a>
-
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const mainBubble = document.getElementById("main-bubble");
@@ -204,7 +205,51 @@
                 asignarEventosBotonesCurso(); // Reasignar eventos después de cambiar cursos
             };
         });
-        
+    document.addEventListener("DOMContentLoaded", () => {
+      const transition = document.getElementById("page-transition");
+
+      // Animación de transición
+      document.querySelectorAll("a.transition-btn").forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const href = this.getAttribute("href");
+          transition.className = "";
+          if (this.classList.contains("slide-right-red")) {
+            transition.classList.add("slide-left-red", "active");
+          }
+          setTimeout(() => {
+            window.location.href = href;
+          }, 700);
+        });
+      });
+
+      // Animación flip tarjetas
+      document.querySelectorAll(".conocenos-box").forEach(box => {
+        box.querySelectorAll(".toggle-sedes").forEach(btn => {
+          btn.addEventListener("click", () => {
+            document.querySelectorAll(".conocenos-box").forEach(other => {
+              if (other !== box) other.classList.remove("girado");
+            });
+            box.classList.toggle("girado");
+          });
+        });
+      });
+
+      // Verifica si viene de fuera del sitio y reemplaza por index
+      const isInternalReferrer = document.referrer.includes(location.hostname);
+      if (!isInternalReferrer) {
+        history.replaceState(null, '', 'index.html');
+      }
+
+      // Al presionar "atrás"
+      window.addEventListener('popstate', function () {
+        transition.className = "";
+        transition.classList.add("slide-left-white", "active");
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 700);
+      });
+    });
     </script>
       <footer class="main-footer">
     <div class="footer-top">

@@ -1432,15 +1432,22 @@ img.nc-img,
 }
 
 #page-transition {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 99999;
-    pointer-events: none;
-    transform: translateX(100%);
-    transition: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #fff;
+    color: rgb(197, 0, 0);
+    border: 2px solid rgb(197, 0, 0);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 32px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 1000;
+    transition: background 0.3s ease;
 }
 
 /* === BLANCO DERECHA → IZQUIERDA === */
@@ -1477,17 +1484,27 @@ img.nc-img,
 }
 
 .transition-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #e94f37;
-    /* Rojo original */
-    color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #fff;
+    color: rgb(197, 0, 0);
+    border: 2px solid rgb(197, 0, 0);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 32px;
     text-decoration: none;
-    border-radius: 8px;
+    font-size: 20px;
     font-weight: bold;
-    transition: all 0.3s ease;
-    border: none;
+    z-index: 1000;
+    transition: background 0.3s ease;
 }
+  .transition-btn:hover {
+    background-color: rgb(197, 0, 0);
+    color: #fff;
+  }
 /* Estilo base para burbujas */
 .bubble {
     position: fixed;
