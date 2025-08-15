@@ -153,29 +153,30 @@
 
             // Función para asignar eventos a los botones
             function asignarEventosBotonesCurso() {
-                const video = document.querySelector('.bg-video');
-                const videosPorCurso = {
-                    'Bartender': '../image/1 bartender.mp4',
-                    'Mesero': '../image/Bienvenidos al curso de Mesero.mp4',
-                    'Recepcionista (Front desk)': '../image/videoRecepcionista.mp4',
-                    'Housekeeping': '../image/cursoHouse.mp4' 
-                };
+    const video = document.querySelector('.bg-video');
+    const source = video.querySelector('source');
+    const videosPorCurso = {
+        'Bartender': '../image/1 bartender.mp4',
+        'Mesero': '../image/Bienvenidos al curso de Mesero.mp4',
+        'Recepcionista (Front desk)': '../image/videoRecepcionista.mp4',
+        'Housekeeping': '../image/cursoHouse.mp4'
+    };
 
-                document.querySelectorAll('.curso-btn').forEach(btn => {
-                    btn.onclick = function () {
-                        const curso = this.closest('.modal-content').querySelector('h2').textContent.trim();
-                        if (videosPorCurso[curso]) {
-                            video.src = videosPorCurso[curso];
-                            video.load();
-                            video.play();
-                        }
-                        // Scroll al video en celular
-                        if (window.innerWidth <= 768) {
-                            video.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    };
-                });
+    document.querySelectorAll('.curso-btn').forEach(btn => {
+        btn.onclick = function () {
+            const curso = this.closest('.modal-content').querySelector('h2').textContent.trim();
+            if (videosPorCurso[curso]) {
+                source.src = videosPorCurso[curso];
+                video.load();
+                video.play();
             }
+            if (window.innerWidth <= 768) {
+                video.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        };
+    });
+}
+
 
             asignarEventosBotonesCurso(); // Inicial
 
