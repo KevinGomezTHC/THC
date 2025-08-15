@@ -800,3 +800,17 @@
     transform: translateX(-33.3333%); /* porque son 3 bloques */
   }
 }
+@media (max-width: 900px) {
+
+.partners-section {
+  overflow: hidden;
+  margin-left: 10px;
+  margin-right: 50px;
+  margin-bottom: 70px;
+  border-left: 80px ;
+  margin-top: -200px;
+}
+.instagram-section{
+  margin-top: 0px;
+}
+}
