@@ -29,6 +29,7 @@ body {
     background-image: url(../image/fondoRojo.avif);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
   }
 
   .blanco {
@@ -159,7 +160,7 @@ body {
     width: 120%;
     height: auto;
     transform: translate(-50%, -50%);
-    opacity: 0.40;
+    opacity: 0.50;
     object-fit: cover;
     border-radius: 16px;
     z-index: 1;
@@ -230,7 +231,7 @@ body {
       height: 100%;
       width: 100%;
       object-fit: cover;
-      opacity: 0.4;
+      opacity: 0.5;
     }
 
     .card-front, .card-back {
@@ -363,7 +364,7 @@ body {
   width: 100%;
   height: 250px;         /* Ajusta la altura según tu preferencia */
   max-width: 100%;
-  opacity: 0.40;
+  opacity: 0.50;
   object-fit: cover;
   border-radius: 16px;
   margin-bottom: 18px;
