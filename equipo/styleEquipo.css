@@ -8,6 +8,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   color: #333;
+  overflow-x: hidden;
 }
 
 /* Contenedor principal */
