@@ -26,6 +26,9 @@ body {
 
   .rojo {
     background-color: rgb(197, 0, 0);
+    background-image: url(../image/fondoRojo.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .blanco {
@@ -369,6 +372,7 @@ body {
   pointer-events: none;
   z-index: 1;
   display: block;
+  size: cover;
 }
 @media (max-width: 768px) {
   .conocenos-box {
