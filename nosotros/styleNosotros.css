@@ -817,4 +817,9 @@
 .instagram-section{
   margin-top: 0px;
 }
+}@media (max-width: 768px) {
+  .fb-container iframe {
+    width: 100%;   /* Que ocupe todo el ancho disponible en móvil */
+    height: 400px; /* Más bajo para que no ocupe toda la pantalla */
+  }
 }
