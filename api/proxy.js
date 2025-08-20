@@ -13,17 +13,17 @@ export default async function handler(req, res) {
     });
 
     const contentType = response.headers.get("content-type");
+    const rawResponse = await response.text();
 
-    // ✅ Manejo seguro del tipo de respuesta
+    console.log("📦 Respuesta del Google Script:", rawResponse); // <-- Esto lo verás en los logs de Vercel
+
     if (contentType && contentType.includes("application/json")) {
-      const data = await response.json();
-      res.status(200).json(data);
+      res.status(200).json(JSON.parse(rawResponse));
     } else {
-      const text = await response.text();
-      res.status(200).send(text); // <-- Enviamos como texto plano si no es JSON
+      res.status(200).send(rawResponse); // Enviamos texto plano
     }
   } catch (error) {
-    console.error("Error en proxy:", error);
+    console.error("❌ Error en proxy:", error);
     res.status(500).json({ error: "Error en proxy", detalle: error.message });
   }
 }
