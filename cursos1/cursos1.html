@@ -382,7 +382,8 @@ document.addEventListener("DOMContentLoaded", function () {
     formData.append("email", form.email.value);
     formData.append("curso", form.curso.value);
 
-    fetch("https://script.google.com/macros/s/AKfycbxqi8QUbIZSurFKL7FjFR4WGn32WeWUnuIGfCaa-PzkRFu-DOCj31ud1qpEwre2okm91Q/exec", {
+    // Cambia la URL al endpoint proxy en tu dominio
+    fetch("/api/proxy", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -413,4 +414,3 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-
