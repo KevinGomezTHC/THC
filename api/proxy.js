@@ -4,26 +4,26 @@ export default async function handler(req, res) {
   const url = "https://script.google.com/macros/s/AKfycbxqi8QUbIZSurFKL7FjFR4WGn32WeWUnuIGfCaa-PzkRFu-DOCj31ud1qpEwre2okm91Q/exec";
 
   try {
-    const response = await fetch(url, {
-      method: req.method,
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: req.method === "POST" ? JSON.stringify(req.body) : null,
-    });
+    if (req.method === "POST") {
+      // Convierte el body JSON en URL-encoded
+      const formEncoded = new URLSearchParams(req.body).toString();
 
-    const contentType = response.headers.get("content-type");
-    const rawResponse = await response.text();
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formEncoded,
+      });
 
-    console.log("📦 Respuesta del Google Script:", rawResponse); // <-- Esto lo verás en los logs de Vercel
-
-    if (contentType && contentType.includes("application/json")) {
-      res.status(200).json(JSON.parse(rawResponse));
-    } else {
-      res.status(200).send(rawResponse); // Enviamos texto plano
+      const data = await response.json();
+      return res.status(200).json(data);
     }
+
+    // Si no es POST, responde con 405 Method Not Allowed
+    return res.status(405).json({ error: "Método no permitido" });
   } catch (error) {
-    console.error("❌ Error en proxy:", error);
-    res.status(500).json({ error: "Error en proxy", detalle: error.message });
+    console.error("Error en proxy:", error);
+    return res.status(500).json({ error: "Error en proxy", detalle: error.message });
   }
 }
