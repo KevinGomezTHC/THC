@@ -1171,6 +1171,8 @@ img.nc-img:hover,
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    object-fit: fill;
+    background-color: #ffffff;
 }
 
 .bg-overlay {
@@ -1349,7 +1351,7 @@ img.nc-img:hover,
 
     .bg-video {
         height: 100%;
-        object-fit: cover;
+        object-fit: fill    ;
     }
 
     .iso-logo {
