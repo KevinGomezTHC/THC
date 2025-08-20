@@ -117,7 +117,43 @@
                 </div>
             </div>
         </div>
+        
     </section>
+<!-- Fondo oscuro -->
+<div id="modal-overlay" class="modal-overlay"></div>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    
+    <h2>¿Te interesa alguno de nuestros cursos?</h2>
+    <p>Déjanos tus datos y te contactaremos con toda la información 📩</p>
+    
+<form id="inscripcionForm">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" required>
+
+  <label for="email">Correo:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="curso">Curso:</label>
+  <select id="curso" name="curso" required>
+    <option value="bartender">Curso de Bartender Profesional</option>
+    <option value="mesero">Curso de Mesero y Servicio al Cliente</option>
+    <option value="recepcion">Curso de Recepción Hotelera</option>
+    <option value="sommelier">Curso de Sommelier Básico</option>
+    <option value="ingles">Curso de Inglés para la Hospitalidad</option>
+  </select>
+
+  <button type="submit" class="btn-inscribete">Enviar</button>
+</form>
+
+<p id="mensaje"></p>
+
+    </form>
+  </div>
+</div>
+
+
 
     <!-- Burbuja flotante -->
     <div class="floating-bubble-container">
@@ -311,3 +347,62 @@
   </footer>
 </body>
 </html>
+<script>
+  const modal = document.getElementById("myModal");
+const closeModal = document.getElementById("closeModal");
+
+// Mostrar modal al cargar la página
+window.addEventListener("load", () => {
+  modal.style.display = "flex"; // se centra con flex
+});
+
+// Cerrar con la X
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Cerrar haciendo clic fuera del contenido, pero no dentro
+window.addEventListener("click", (e) => {
+  if (e.target.classList.contains("modal")) {
+    modal.style.display = "none";
+  }
+});
+
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("inscripcionForm");
+  const mensaje = document.getElementById("mensaje");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+const formData = {
+  nombre: form.nombre.value,
+  email: form.email.value,
+  curso: form.curso.value
+};
+
+fetch("https://script.google.com/macros/s/AKfycbz7dkZF9l89vNeEg3P-4Gw1WlaC3gGVFuW3Vd6pnqVS9Xg0iyH3kLD6mH0GIY-AY2DD/exec", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(formData)
+})
+
+    .then(response => response.text())
+    .then(data => {
+      mensaje.innerHTML = "✅ ¡Gracias! Tus datos fueron enviados correctamente.";
+      mensaje.style.color = "green";
+      form.reset();
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      mensaje.innerHTML = "❌ Ocurrió un error. Inténtalo de nuevo.";
+      mensaje.style.color = "red";
+    });
+  });
+});
+</script>
+
