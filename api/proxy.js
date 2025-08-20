@@ -7,9 +7,9 @@ export default async function handler(req, res) {
     const response = await fetch(url, {
       method: req.method,
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json"
       },
-      body: req.method === "POST" ? req.body : null,
+      body: req.method === "POST" ? JSON.stringify(req.body) : null,
     });
 
     const contentType = response.headers.get("content-type");
