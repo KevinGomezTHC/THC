@@ -127,31 +127,19 @@
     
     <h2>¿Te interesa alguno de nuestros cursos?</h2>
     <p>Déjanos tus datos y te contactaremos con toda la información 📩</p>
-    
-<form id="inscripcionForm">
-  <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre" required>
 
-  <label for="email">Correo:</label>
-  <input type="email" id="email" name="email" required>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdie6ewBsgujDleuDnvvsZbbYD8BUpFoCgciJlaeF7dQ3_wQg/viewform?embedded=true"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      allowfullscreen
+    ></iframe>
 
-  <label for="curso">Curso:</label>
-  <select id="curso" name="curso" required>
-    <option value="bartender">Curso de Bartender Profesional</option>
-    <option value="mesero">Curso de Mesero y Servicio al Cliente</option>
-    <option value="recepcion">Curso de Recepción Hotelera</option>
-    <option value="sommelier">Curso de Sommelier Básico</option>
-    <option value="ingles">Curso de Inglés para la Hospitalidad</option>
-  </select>
-
-  <button type="submit" class="btn-inscribete">Enviar</button>
-</form>
-
-<p id="mensaje"></p>
-
-    </form>
+    <p id="mensaje"></p>
   </div>
 </div>
+
 
 
 
@@ -200,7 +188,7 @@
 
     document.querySelectorAll('.curso-btn').forEach(btn => {
         btn.onclick = function () {
-            const curso = this.closest('.modal-content').querySelector('h2').textContent.trim();
+            const curso = this.closest('.mymodal-content').querySelector('h2').textContent.trim();
             if (videosPorCurso[curso]) {
                 source.src = videosPorCurso[curso];
                 video.load();
