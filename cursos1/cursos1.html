@@ -188,7 +188,7 @@
 
     document.querySelectorAll('.curso-btn').forEach(btn => {
         btn.onclick = function () {
-            const curso = this.closest('.mymodal-content').querySelector('h2').textContent.trim();
+            const curso = this.closest('.modal-content').querySelector('h2').textContent.trim();
             if (videosPorCurso[curso]) {
                 source.src = videosPorCurso[curso];
                 video.load();
