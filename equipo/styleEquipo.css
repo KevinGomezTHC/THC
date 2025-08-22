@@ -136,6 +136,22 @@ body {
   margin-left: 220px;
   justify-items: center;
 }
+.intro-cursos5 img{
+  position: absolute;
+  width: 130px;
+  height: 100px;
+  margin-top: -100px;
+  margin-left: 350px;
+  margin-bottom: -100px;
+}
+.intro-cursos1 img{
+  position: absolute;
+  width: 130px;
+  height: 90px;
+  margin-top: -100px;
+  margin-left: 350px;
+  margin-bottom: -100px;
+}
 .modal-content {
   background-color: #ffffff;
   border-radius: 18px;
