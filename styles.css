@@ -30,6 +30,7 @@ body {
     color: var(--gris-oscuro);
     margin: 0;
     overflow: auto;
+    overflow-x: hidden;
 }
 
 html,
