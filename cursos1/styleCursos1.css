@@ -2263,6 +2263,7 @@ img.nc-img,
   border-radius: 16px;
   max-width: 450px;
   width: 100%;
+  height: auto;
   box-shadow: 0 6px 20px rgba(0,0,0,0.35);
   animation: fadeIn 0.3s ease;
   position: relative;
@@ -2381,4 +2382,7 @@ img.nc-img,
     top: 8px;
     right: 10px;
   }
+}
+#isq1{
+margin: 20px auto;
 }
