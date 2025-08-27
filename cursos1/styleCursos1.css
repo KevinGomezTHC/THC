@@ -13,7 +13,6 @@ html {
     font-size: 16px;
 }
 
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -228,7 +227,6 @@ h6,
     background: none;
 }
 
-/* Modal */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -337,7 +335,6 @@ h6,
     letter-spacing: 0.2px;
 }
 
-/* Academia Formativa */
 .academia-formativa {
     background: #23242a;
     padding: 60px 0 40px 0;
@@ -466,9 +463,6 @@ h6,
     transition: background 0.2s;
 }
 
-
-
-/* Nuestros Cursos */
 .nuestros-cursos {
     background: #fff;
     padding: 60px 0 40px 0;
@@ -631,13 +625,9 @@ h6,
     transition: background-color 0.3s ease;
     align-self: center;
     margin: 10px auto 0 auto;
-    /* Centrado horizontal */
     display: block;
 }
 
-
-
-/* Animaciones generales */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -650,8 +640,6 @@ h6,
         transform: translateY(0);
     }
 }
-
-/* Animación para títulos */
 .animated-title {
     position: relative;
     display: inline-block;
@@ -696,10 +684,6 @@ h6,
     }
 }
 
-
-
-
-/* Botones animados */
 button,
 .curso-btn,
 .af-btn,
@@ -727,7 +711,6 @@ button,
     }
 }
 
-/* Animación para imágenes */
 img.nc-img,
 .curso-img,
 .sn-img-main,
@@ -746,8 +729,6 @@ img.nc-img,
         opacity: 1;
     }
 }
-
-/* Animación para barra de cursos */
 .nc-bar {
     animation: barGrow 1s cubic-bezier(.77, 0, .18, 1) forwards;
 }
@@ -762,7 +743,6 @@ img.nc-img,
     }
 }
 
-/* Responsive */
 @media (max-width: 900px) {
     .sn-container {
         flex-direction: column;
@@ -843,7 +823,6 @@ img.nc-img,
     }
 }
 
-/* Responsive modal */
 @media (max-width: 700px) {
     .content {
         padding: 28px 12px 24px 12px;
@@ -926,13 +905,11 @@ img.nc-img,
     font-size: 1.8rem;
     font-weight: 300;
     max-width: 400px;
-    /* para que no sea tan ancho */
     line-height: 1.4;
 }
 
 .iso-left img {
     max-width: 400px;
-    /* ajusta tamaño del logo si es necesario */
 }
 
 .bg-video {
@@ -953,7 +930,6 @@ img.nc-img,
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    /* mantiene la fuente elegante */
     line-height: 1.4;
 
 
@@ -971,7 +947,6 @@ img.nc-img,
 
     .iso-content {
         padding: 40px 80px;
-        /* Aumenta el padding horizontal general */
     }
 }
 
@@ -1362,7 +1337,6 @@ img.nc-img,
         display: flex;
         transition: transform 0.4s ease;
         width: 300%;
-        /* Depende del número de slides */
     }
 
     .curso-slide {
@@ -1394,7 +1368,6 @@ img.nc-img,
         right: 10px;
     }
 
-    /* Ajustes extra para evitar desbordes */
     .iso-box.expandida .modal-content {
         max-width: 100%;
     }
@@ -1450,7 +1423,6 @@ img.nc-img,
     transition: background 0.3s ease;
 }
 
-/* === BLANCO DERECHA → IZQUIERDA === */
 #page-transition.slide-right-white {
     background: white;
     transform: translateX(100%);
@@ -1461,7 +1433,6 @@ img.nc-img,
     transform: translateX(0);
 }
 
-/* === ROJO DERECHA → IZQUIERDA === */
 #page-transition.slide-right-red {
     background: red;
     transform: translateX(100%);
@@ -1472,7 +1443,6 @@ img.nc-img,
     transform: translateX(0);
 }
 
-/* === BLANCO IZQUIERDA → DERECHA === */
 #page-transition.slide-left-white {
     background: white;
     transform: translateX(-100%);
@@ -1507,7 +1477,6 @@ img.nc-img,
     color: #fff;
 }
 
-/* Estilo base para burbujas */
 .bubble {
     position: fixed;
     bottom: 20px;
@@ -1531,7 +1500,6 @@ img.nc-img,
     height: 28px;
 }
 
-/* WhatsApp - más a la derecha */
 .bubble-whatsapp {
     right: 80px;
 }
@@ -1541,7 +1509,6 @@ img.nc-img,
     color: #e94f37;
 }
 
-/* Chatbot - más a la izquierda */
 .bubble-chatbot {
     right: 20px;
 }
@@ -1550,8 +1517,6 @@ img.nc-img,
     background: #ffb7a8;
     color: #e94f37;
 }
-
-/* Efecto hover */
 .bubble:hover {
     transform: scale(1.1);
 }
@@ -1563,7 +1528,6 @@ img.nc-img,
     border-radius: 6px;
     display: inline-block;
     line-height: 1.5;
-    /* Asegura altura coherente */
     vertical-align: middle;
 }
 
@@ -1576,7 +1540,6 @@ img.nc-img,
 }
 
 
-/* Móvil */
 @media (max-width: 600px) {
     .bubble-whatsapp {
         right: 70px;
@@ -1771,18 +1734,14 @@ img.nc-img,
     font-family: 'Segoe UI', sans-serif;
     transition: transform 0.3s ease;
 }
-
-/* Imagen más pequeña para ayudar */
 .curso-img-b {
     width: 100%;
     border-radius: 10px;
     object-fit: cover;
     max-height: 70px;
-    /* antes era 90px o más */
     margin-bottom: 10px;
 }
 
-/* Botón más compacto */
 .curso-btn {
     background-color: #e94f37;
     color: #ffffff;
@@ -1918,12 +1877,10 @@ img.nc-img,
     }
 }
 
-/* Ocultar los cursos extra en escritorio */
 .hidden-desktop {
     display: none;
 }
 
-/* En celular, mostrar todo normalmente */
 @media (max-width: 768px) {
     .hidden-desktop {
         display: block;
@@ -1934,7 +1891,6 @@ img.nc-img,
     }
 }
 
-/* Estilo básico del botón */
 .ver-mas-btn {
     margin: 12px auto 0 auto;
     padding: 10px 18px;
@@ -1957,7 +1913,6 @@ img.nc-img,
     background-color: #c63c28;
 }
 
-/* Móvil: formato compacto y margen superior */
 @media (max-width: 768px) {
     .ver-mas-btn {
         position: static;
@@ -1993,7 +1948,6 @@ body {
         padding: 8px 16px;
         border-radius: 25px;
         margin: 10px auto 0 auto;
-        /* Centrado horizontal en móvil */
         display: block;
         align-self: center;
     }
@@ -2011,12 +1965,9 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: background-color 0.3s ease;
     margin: 10px auto 0 auto;
-    /* Centrado horizontal */
     display: block;
     align-self: center;
 }
-
-/* HEADER */
 .main-header {
     width: 100%;
     background: transparent;
@@ -2095,8 +2046,6 @@ body {
 }
 
 
-
-/* FOOTER */
 .main-footer {
     background: #111;
     color: #fff;
@@ -2180,7 +2129,6 @@ body {
     vertical-align: middle;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
     .main-header {
         height: auto;
@@ -2224,7 +2172,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Cambiado para espacio entre logo y nav */
     padding: 0 32px;
 }
 
@@ -2245,7 +2192,6 @@ body {
     fill: #fff !important;
 }
 
-/* Overlay oscuro */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -2257,7 +2203,6 @@ body {
     z-index: 999;
 }
 
-/* Modal */
 .modal {
     position: fixed;
     top: 50%;
@@ -2269,7 +2214,6 @@ body {
     z-index: 1000;
 }
 
-/* Contenido */
 .modal-content {
     background: #fff;
     padding: 20px;
@@ -2280,7 +2224,6 @@ body {
     animation: fadeIn 0.3s ease;
 }
 
-/* Botón cerrar */
 .close {
     position: absolute;
     top: 10px;
@@ -2295,8 +2238,6 @@ body {
     color: #000;
 }
 
-
-/* Animación */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -2322,17 +2263,14 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-/* Título */
 .modal-content h2 {
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 8px;
     color: #e53935;
-    /* Rojo institucional */
     text-align: center;
 }
 
-/* Subtítulo */
 .modal-content p {
     font-size: 14px;
     color: #555;
@@ -2340,7 +2278,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Labels y inputs */
 .modal-content label {
     display: block;
     margin-top: 12px;
@@ -2365,7 +2302,6 @@ body {
     border-color: #e53935;
 }
 
-/* Botón */
 .btn-inscribete {
     margin-top: 20px;
     width: 100%;
@@ -2384,7 +2320,6 @@ body {
     background: linear-gradient(90deg, #d32f2f, #ff5722);
 }
 
-/* Botón cerrar */
 .close {
     position: absolute;
     top: 12px;
@@ -2399,7 +2334,6 @@ body {
     color: #000;
 }
 
-/* Ajustes generales para móviles */
 @media (max-width: 600px) {
     .modal-content {
         width: 95%;

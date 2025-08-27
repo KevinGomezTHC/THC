@@ -1,12 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ------------------------------
-  // VARIABLES GLOBALES
-  // ------------------------------
   let bubblesOpen = false;
 
-  // ------------------------------
-  // MODALES TRADICIONALES
-  // ------------------------------
   const abrirModal = (btnSelector, modalId) => {
     const botonAbrir = document.querySelector(btnSelector);
     const modal = document.getElementById(modalId);
@@ -33,9 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   abrirModal('.sn-vision', 'modal-vision');
   abrirModal('.sn-bartender', 'modal-bartender');
 
-  // ------------------------------
-  // MÓDULO EXPANDIBLE "VER MÁS"
-  // ------------------------------
   (() => {
     const verMasBtn = document.querySelector('.expand-white-btn');
     const visionBox = document.querySelector('.iso-box.vision');
@@ -59,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.overflow = 'auto';
       document.documentElement.style.overflow = 'auto';
 
-      // Historial para botón "atrás"
       history.pushState({ expanded: true }, '', '#expanded');
     });
 
@@ -67,12 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
       cerrarExpandido();
     });
 
-    // Al presionar "atrás", cerrar animación si está abierta
     window.addEventListener('popstate', (event) => {
       if (expanded) {
         cerrarExpandido();
       } else {
-        // O redirigir al index si no hay expandido activo
         window.location.href = 'index.html';
       }
     });
@@ -89,9 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })();
 
-  // ------------------------------
-  // AJUSTE DE VELOCIDAD DE VIDEO
-  // ------------------------------
   (() => {
     const video = document.querySelector('.bg-video');
     if (video) {
@@ -100,13 +85,12 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 
 
-});// Animaciones AOS
+});
 AOS.init({
     duration: 1000,
     once: true
 });
 
-// Efecto header al hacer scroll
 window.addEventListener('scroll', () => {
     document.getElementById('main-header').classList.toggle('scrolled', window.scrollY > 50);
 });

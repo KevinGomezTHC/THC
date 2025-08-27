@@ -151,8 +151,6 @@ body {
   .card-back {
     transform: rotateY(180deg);
   }
-
-  /* Imagen de fondo dentro de card */
   .card-img {
     position: absolute;
     top: 50%;
@@ -175,7 +173,6 @@ body {
     text-align: center;
   }
 
-  /* Responsive */
   @media (max-width: 768px) {
     .conocenos-container {
       flex-direction: column;
@@ -235,7 +232,7 @@ body {
     }
 
     .card-front, .card-back {
-      justify-content: flex-end; /* Mueve contenido hacia abajo */
+      justify-content: flex-end; 
       padding-bottom: 60px;
     }
   }
@@ -284,33 +281,30 @@ body {
     width: 28px;
     height: 28px;
   }
-  /* Costa Rica → abajo derecha */
   .bubble-cr {
     bottom: 20px;
     right: 20px;
   }
 
-  /* Bogotá → centro derecha */
   .bubble-bogota {
     bottom: 20px;
     right: 20px;
     transform: translateY(-50%);
   }
 
-  /* Medellín → arriba derecha */
   .bubble-medellin {
     bottom: 20px;
     right: 20px;
   }
   .card-back p {
-    font-size: 16px;         /* texto general más pequeño */
-    font-weight: normal;     /* sin negrita por defecto */
+    font-size: 16px;         
+    font-weight: normal;     
     line-height: 1.4;
   }
 
   .card-back strong {
-    font-weight: bold;       /* negrita solo para <strong> */
-    font-size: 20px;            /* opcional, más oscuro */
+    font-weight: bold;      
+    font-size: 20px;        
   }
   .material-symbols-outlined {
     font-variation-settings:
@@ -326,9 +320,9 @@ body {
   font-size: 2rem;
   font-weight: bold;
   color: rgb(197, 0, 0);
-  z-index: 2000; /* encima de todo */
+  z-index: 2000; 
   font-family: 'DM Serif Text', serif;
-  pointer-events: none; /* no interfiere con clics */
+  pointer-events: none;
 }
   @media screen and (max-width: 768px) {
     .modal-overlay {
@@ -354,7 +348,7 @@ body {
 .card-back .content {
   display: flex;
   flex-direction: column;
-  align-items: stretch; /* Cambiado de center a stretch */
+  align-items: stretch; 
   justify-content: flex-start;
   gap: 10px;
   width: 100%;
@@ -362,7 +356,7 @@ body {
 
 .card-back .card-img-back {
   width: 100%;
-  height: 250px;         /* Ajusta la altura según tu preferencia */
+  height: 250px;         
   max-width: 100%;
   opacity: 0.50;
   object-fit: cover;
@@ -393,7 +387,6 @@ body {
   }
 }
 
-/* HEADER */
 .main-header {
   width: 100%;
   background: transparent;
@@ -473,7 +466,6 @@ body {
 
 
 
-/* FOOTER */
 .main-footer {
   background: #111;
   color: #fff;
@@ -544,7 +536,6 @@ body {
   vertical-align: middle;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .main-header {
     height: auto;
@@ -582,7 +573,7 @@ body {
   height: 70px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Cambiado para espacio entre logo y nav */
+  justify-content: space-between;
   padding: 0 32px;
 }
 

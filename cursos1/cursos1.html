@@ -12,14 +12,11 @@
 </head>
 
 <body>
-  <!-- Transición -->
   <div id="page-transition"></div>
   <a href="../index.html" class="transition-btn slide-right-red">✖</a>
-  <!--<a href="../index.html "></a>-->
 
   <section class="isometric-section">
     <div class="iso-right">
-      <!-- Cursos visibles al inicio -->
       <div class="iso-box vision curso-inicial">
         <div id="isq1" class="modal-content">
           <span class="modal-subtitulo">Contenido del Curso</span>
@@ -58,7 +55,6 @@
         </div>
       </div>
 
-      <!-- Cursos alternativos ocultos al inicio -->
       <div class="extra-cursos" style="display:none;">
         <div class="iso-box vision">
           <div id="isq" class="modal-content">
@@ -98,7 +94,6 @@
         </div>
       </div>
 
-      <!-- Botón "Ver más" SIEMPRE visible y funcional -->
       <button class="ver-mas-btn" onclick="mostrarCursos()">Ver más</button>
     </div>
 
@@ -118,7 +113,6 @@
     </div>
 
   </section>
-  <!-- Fondo oscuro -->
   <div id="modal-overlay" class="modal-overlay"></div>
   <div id="myModal" class="modal">
     <div class="modal-content">
@@ -134,11 +128,7 @@
       <p id="mensaje"></p>
     </div>
   </div>
-
-
-
-
-  <!-- Burbuja flotante -->
+  
   <div class="floating-bubble-container">
     <div class="sub-bubbles" id="sub-bubbles">
       <a href="https://wa.me/573203852499" target="_blank" title="WhatsApp">
@@ -170,7 +160,6 @@
         bubbleContainer.classList.toggle("active");
       });
 
-      // Función para asignar eventos a los botones
       function asignarEventosBotonesCurso() {
         const video = document.querySelector('.bg-video');
         const source = video.querySelector('source');
@@ -198,7 +187,7 @@
 
 
 
-      asignarEventosBotonesCurso(); // Inicial
+      asignarEventosBotonesCurso();
 
       let mostrandoAlternativos = false;
       let cursosOriginales = [];
@@ -222,13 +211,12 @@
           btn.textContent = 'Ver más';
           mostrandoAlternativos = false;
         }
-        asignarEventosBotonesCurso(); // Reasignar eventos después de cambiar cursos
+        asignarEventosBotonesCurso(); 
       };
     });
     document.addEventListener("DOMContentLoaded", () => {
       const transition = document.getElementById("page-transition");
 
-      // Animación de transición
       document.querySelectorAll("a.transition-btn").forEach(link => {
         link.addEventListener("click", function (e) {
           e.preventDefault();
@@ -243,7 +231,6 @@
         });
       });
 
-      // Animación flip tarjetas
       document.querySelectorAll(".conocenos-box").forEach(box => {
         box.querySelectorAll(".toggle-sedes").forEach(btn => {
           btn.addEventListener("click", () => {
@@ -255,13 +242,10 @@
         });
       });
 
-      // Verifica si viene de fuera del sitio y reemplaza por index
       const isInternalReferrer = document.referrer.includes(location.hostname);
       if (!isInternalReferrer) {
         history.replaceState(null, '', 'index.html');
       }
-
-      // Al presionar "atrás"
       window.addEventListener('popstate', function () {
         transition.className = "";
         transition.classList.add("slide-left-white", "active");
@@ -343,17 +327,12 @@
   const modal = document.getElementById("myModal");
   const closeModal = document.getElementById("closeModal");
 
-  // Mostrar modal al cargar la página
   window.addEventListener("load", () => {
-    modal.style.display = "flex"; // se centra con flex
+    modal.style.display = "flex"; 
   });
-
-  // Cerrar con la X
   closeModal.addEventListener("click", () => {
     modal.style.display = "none";
   });
-
-  // Cerrar haciendo clic fuera del contenido, pero no dentro
   window.addEventListener("click", (e) => {
     if (e.target.classList.contains("modal")) {
       modal.style.display = "none";

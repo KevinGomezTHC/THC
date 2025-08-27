@@ -13,35 +13,28 @@
 </head>
 
 <body>
-  <!-- overlay de transición (no se volverá a crear en JS) -->
   <div id="page-transition"></div>
 
-<header id="main-header">
-  <div class="botones-header">
-    <a href="index.html" class="header-img">
-      <img src="image/thc-logo.png" alt="Logo THC">
-    </a>
-  </div>
-
-  <!-- Botón hamburguesa -->
-  <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-
-  <!-- Menú de navegación -->
-  <nav class="nav-menu">
-    <ul>
-      <li>
-        <a href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=01d850cc-ee63-4325-94d8-668dfe91e970"
-           class="nav-link-header">Academia virtual</a>
-      </li>
-      <li>
-        <a href="https://w3uqunyst2.zite.so" class="nav-link-header">Nuestra comunidad</a>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-    
-
+  <header id="main-header">
+    <div class="botones-header">
+      <a href="index.html" class="header-img">
+        <img src="image/thc-logo.png" alt="Logo THC">
+      </a>
+    </div>
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+    <nav class="nav-menu">
+      <ul>
+        <li>
+          <a href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=01d850cc-ee63-4325-94d8-668dfe91e970"
+            class="nav-link-header">Academia virtual</a>
+        </li>
+        <li>
+          <a href="https://w3uqunyst2.zite.so" class="nav-link-header">Nuestra comunidad</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
   <section class="isometric-section">
     <div class="iso-left">
       <video autoplay muted loop playsinline class="bg-video">
@@ -49,10 +42,8 @@
       </video>
       <div class="bg-overlay"></div>
       <div class="iso-content">
-
       </div>
     </div>
-
     <div class="iso-right">
       <div class="iso-box vision">
         <img src="/image/icono.png" alt="Diseño isométrico" class="iso-illustration" />
@@ -60,18 +51,15 @@
         <p>Conoce nuestros cursos</p><br />
         <a href="cursos1/cursos1.html" class="transition-btn slide-right-white">Ver más</a>
       </div>
-
       <div class="iso-box studio">
         <img src="/image/icono.png" alt="Diseño isométrico" class="iso-illustration" />
-        <h4>CONÓCENOS</h4>
+        <h4 >CONÓCENOS</h4>
         <a href="sedes/sedes.html" class="transition-btn slide-right-red">Nuestras sedes</a>
         <a href="nosotros/nosotros.html" class="transition-btn slide-right-red">Nosotros</a>
         <a href="equipo/equipo.html" class="transition-btn slide-right-red">Nuestro equipo</a>
       </div>
     </div>
   </section>
-
-  <!-- Burbuja flotante con redes -->
   <div class="floating-bubble-container">
     <div class="sub-bubbles" id="sub-bubbles">
       <a href="https://wa.me/573203852499" target="_blank" title="WhatsApp">
@@ -89,16 +77,17 @@
       <img src="/image/logos/logoMore.png" alt="Más">
     </div>
   </div>
-
   <div id="click-loader" style="display:none;">
     <img src="/image/icono.png" alt="Cargando..." />
   </div>
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  
   <script src="main.js"></script>
+  
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // ---------- Transiciones de página ----------
       const transition = document.getElementById("page-transition") || (() => {
         const el = document.createElement("div");
         el.id = "page-transition";
@@ -134,25 +123,18 @@
           bubbleContainer.classList.toggle("active");
         });
       }
-
-      // ---------- Header: blanco al hacer scroll (desktop) + ocultar en móvil ----------
       const header = document.querySelector('#main-header');
       let lastScroll = window.scrollY;
       const MOBILE_BP = 900;
-      const THRESHOLD = 10;   // a partir de aquí se considera "scrolled"
-
+      const THRESHOLD = 10; 
       const handleScroll = () => {
         const y = window.scrollY;
         const isMobile = window.innerWidth <= MOBILE_BP;
-
-        // 1) Estado "scrolled" (fondo blanco) para cualquier viewport
         if (y > THRESHOLD) {
           header.classList.add('scrolled');
         } else {
           header.classList.remove('scrolled');
         }
-
-        // 2) En móvil: ocultar al bajar y mostrar al subir
         if (isMobile) {
           if (y > lastScroll && y > 70) {
             header.classList.add('hide-on-scroll');
@@ -160,29 +142,24 @@
             header.classList.remove('hide-on-scroll');
           }
         } else {
-          // por si venías de móvil, asegúrate de mostrarlo en desktop
           header.classList.remove('hide-on-scroll');
         }
-
         lastScroll = y;
       };
-
-      // Estado inicial correcto al cargar
       handleScroll();
-
-      // Listeners
       window.addEventListener('scroll', handleScroll, { passive: true });
       window.addEventListener('resize', handleScroll);
     });
-  </script><script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
+  </script>
 
-  menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
-</script>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
 
   <footer class="main-footer">
     <div class="footer-top">
@@ -195,8 +172,8 @@
             src="/image/logos/logoInstagram.png" alt="Instagram"></a>
         <a href="https://www.youtube.com/@TheHospitalityCenterLatam" title="YouTube"><img
             src="/image/logos/LogoYoutube.webp" alt="YouTube"></a>
-        <a href="https://www.facebook.com/people/The-Hospitality-Center-Colombia/61572665732946/?rdid=7bJa5lJWf36nBNlI&share_url/" title="Facebook"><img
-            src="/image/logos/Facebook_Logo_.png" alt="X"></a>
+        <a href="https://www.facebook.com/people/The-Hospitality-Center-Colombia/61572665732946/?rdid=7bJa5lJWf36nBNlI&share_url/"
+          title="Facebook"><img src="/image/logos/Facebook_Logo_.png" alt="X"></a>
       </div>
     </div>
     <div class="footer-links">
@@ -250,4 +227,5 @@
     </div>
   </footer>
 </body>
+
 </html>

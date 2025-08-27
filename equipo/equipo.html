@@ -13,13 +13,9 @@
 
 <body>
     <div id="page-transition"></div>
-
-    <!-- Botón de cerrar (✖) -->
     <div class="vision-expandido1">
         <a href="../index.html" class="transition-btn slide-right-red">✖</a>
-
         <section class="cursos-container">
-            <!-- INTRO TEXT -->
             <div class="intro-cursos">
                 <span class="intro-subtitulo">Nuestro equipo</span>
                 <h2>Conoce nuestro talento<span class="resaltado"></span></h2>
@@ -32,9 +28,7 @@
                 <h2>The Hospitality Center - Bogota </h2>
                 <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/1f1e8-1f1f4.png" alt="">
             </div>
-            <!-- Grid De Colombia -->
             <div class="cursos-grid">
-                <!-- DON RODOLFO -->
                 <div class="curso-wrapper">
                     <div class="curso-img-out">
                         <img src="/image/personas/rodolfoMurillo.png" alt="Bartender" class="curso-img-b" />
@@ -45,9 +39,7 @@
                                 <li>
                                     <h2>Rodolfo Murillo </h2>Presidente
                                 </li>
-
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -61,9 +53,7 @@
                                 <li>
                                     <h2>Mario Diaz</h2>Gerente General
                                 </li>
-
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -77,9 +67,7 @@
                                 <li>
                                     <h2>Tatiana Paola Pabon</h2>Gerente Comercial
                                 </li>
-
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -93,9 +81,7 @@
                                 <li>
                                     <h2>Juan Camilo Nuñez</h2>Coordinador Academico
                                 </li>
-
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -104,7 +90,6 @@
                 <h2>The Hospitality Center - Medellin</h2>
             </div>
             <div class="cursos-grid2">
-                <!-- CURSO 1 -->
                 <div class="curso-wrapper">
                     <div class="curso-img-out">
                         <img src="/image/personas/david-jimenez-td.png" alt="Bartender" class="curso-img-b" />
@@ -116,7 +101,6 @@
                                     <h2>David Jimenez</h2>Director Academico
                                 </li>
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -131,7 +115,6 @@
                                     <h2>Valentina Rave</h2>Ejeutiva de mercadeo y ventas
                                 </li>
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -141,7 +124,6 @@
                 <img src="https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/1024px/1f1e8-1f1f7.png" alt="">
             </div>
             <div class="cursos-grid3">
-                <!-- CURSO 1 -->
                 <div class="curso-wrapper">
                     <div class="curso-img-out">
                         <img src="/image/personas/daniela-larios-td.png" alt="Bartender" class="curso-img-b" />
@@ -153,7 +135,6 @@
                                     <h2>Daniela Larios</h2>Gerente General
                                 </li>
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -167,9 +148,7 @@
                                 <li>
                                     <h2>Miranda Mora Brenes</h2>Coordinadora de mercadeo
                                 </li>
-
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -183,9 +162,7 @@
                                 <li>
                                     <h2>Olman Zeledon</h2>Chef Instructor
                                 </li>
-
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -201,9 +178,7 @@
                                 <li>
                                     <h2>Yajaira Martinez Reyes</h2>Asistente de sevicios generales
                                 </li>
-
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -217,20 +192,14 @@
                                 <li>
                                     <h2>Mariana Mendez Solano</h2>Asistencia administrativa
                                 </li>
-
                             </ul>
-
                         </div>
                     </div>
                 </div>
 
             </div>
         </section>
-
-
-        <!-- Transición de salida -->
         <script>
-
             document.addEventListener("DOMContentLoaded", () => {
                 const transition = document.createElement("div");
                 transition.id = "page-transition";
@@ -240,11 +209,7 @@
                     link.addEventListener("click", function (e) {
                         e.preventDefault();
                         const href = this.getAttribute("href");
-
-                        // Limpiar clases anteriores
                         transition.className = "";
-
-                        // Detectar clase
                         if (this.classList.contains("slide-right-white")) {
                             transition.classList.add("slide-right-white", "active");
                         } else if (this.classList.contains("slide-right-red")) {
@@ -265,11 +230,6 @@
                 window.location.href = 'index.html';
             });
         </script>
-        <!-- Burbuja WhatsApp 
-    <a href="https://wa.me/573203852499" target="_blank" class="bubble bubble-whatsapp"
-        title="Contáctanos por WhatsApp">
-        <img src="/image/whatsapp-icon.png" alt="WhatsApp" />
-    </a>-->
         <!-- Burbuja ChatBot -->
         <a href="https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/29/12/20250529121716-E1Y7Q513.json"
             target="_blank" class="bubble bubble-chatbot" title="Habla con nuestro asistente">
