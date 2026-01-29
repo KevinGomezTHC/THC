@@ -21,9 +21,8 @@
         <img src="image/thc-logo.png" alt="Logo THC">
       </a>
     </div>
-    <!-- Botón hamburguesa -->
     <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-    <nav class="nav-menu">
+    <nav class="nav-menu"> 
       <ul>
         <li>
           <a href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=01d850cc-ee63-4325-94d8-668dfe91e970"
@@ -226,6 +225,286 @@
       </div>
     </div>
   </footer>
+  <!-- Dual announcement modal: Oferta laboral + Oferta educativa -->
+  <div id="dual-modal-overlay" class="dual-modal-overlay" aria-hidden="true">
+    <div class="dual-modal" role="dialog" aria-label="Ofertas">
+      <div class="modal-card offer-laboral">
+        <button class="modal-close" data-close-card aria-label="Cerrar oferta laboral">&times;</button>
+        <h3>Oferta laboral</h3>
+        <p class="modal-desc">Selecciona la formación:</p>
+
+        <div class="modal-actions">
+          <div class="dropdown">
+            <button class="modal-btn dropdown-toggle" type="button" aria-expanded="false">Formación laboral ▾</button>
+            <div class="dropdown-menu" aria-hidden="true">
+              <button class="modal-btn submenu-item" type="button" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdsOtzbcMfdpr5pVipyVlzc9SreOu1V_KytsUHklYgYkJOAdg/viewform?embedded=true">Costa Rica</button>
+              <button class="modal-btn submenu-item" type="button" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdsOtzbcMfdpr5pVipyVlzc9SreOu1V_KytsUHklYgYkJOAdg/viewform?embedded=true">Colombia</button>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="modal-btn dropdown-toggle" type="button" aria-expanded="false">Formación especializada ▾</button>
+            <div class="dropdown-menu" aria-hidden="true">
+              <button class="modal-btn submenu-item" type="button" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdsOtzbcMfdpr5pVipyVlzc9SreOu1V_KytsUHklYgYkJOAdg/viewform?embedded=true">Costa Rica</button>
+              <button class="modal-btn submenu-item" type="button" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdsOtzbcMfdpr5pVipyVlzc9SreOu1V_KytsUHklYgYkJOAdg/viewform?embedded=true">Colombia</button>
+            </div>
+          </div>
+
+          <button class="modal-btn direct-form" type="button" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdsOtzbcMfdpr5pVipyVlzc9SreOu1V_KytsUHklYgYkJOAdg/viewform?embedded=true">Formación superior</button>
+        </div>
+      </div>
+
+      <div class="modal-card offer-educativa">
+        <button class="modal-close" data-close-card aria-label="Cerrar oferta educativa">&times;</button>
+        <h3>Oferta educativa</h3>
+        <p class="modal-desc">Elige la región:</p>
+        <div class="modal-actions">
+          <button class="modal-btn educativa-btn" type="button" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdsOtzbcMfdpr5pVipyVlzc9SreOu1V_KytsUHklYgYkJOAdg/viewform?embedded=true">Costa Rica</button>
+          <button class="modal-btn educativa-btn" type="button" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdsOtzbcMfdpr5pVipyVlzc9SreOu1V_KytsUHklYgYkJOAdg/viewform?embedded=true">Colombia</button>
+          <button class="modal-btn educativa-btn" type="button" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdsOtzbcMfdpr5pVipyVlzc9SreOu1V_KytsUHklYgYkJOAdg/viewform?embedded=true">Europa</button>
+          <button class="modal-btn educativa-btn" type="button" data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdsOtzbcMfdpr5pVipyVlzc9SreOu1V_KytsUHklYgYkJOAdg/viewform?embedded=true">Crucero</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inline form viewer (iframe) -->
+  <div id="form-modal" class="form-modal" aria-hidden="true">
+    <div class="form-modal-card">
+      <div class="form-modal-header">
+        <button id="form-back" class="modal-btn secondary" type="button">← Volver</button>
+        <button id="form-close" class="modal-btn secondary" type="button">Cerrar</button>
+      </div>
+      <div class="form-modal-body">
+        <iframe id="form-iframe" src="" frameborder="0" title="Formulario"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Modal: overlay & layout */
+    .dual-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 200000;
+    }
+    .dual-modal-overlay.visible { display: flex; }
+
+    .dual-modal {
+      display: flex;
+      gap: 18px;
+      align-items: stretch;
+      justify-content: center;
+      max-width: 1100px;
+      width: calc(100% - 40px);
+    }
+
+    .modal-card {
+      background: #fff;
+      color: #222;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      width: 420px;
+      max-width: 46vw;
+      min-width: 240px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-sizing: border-box;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      color: #666;
+      cursor: pointer;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: stretch;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .modal-btn {
+      background: #e94f37;
+      color: #fff;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .modal-btn.secondary { background:#f1f1f1; color:#333; }
+
+    /* Dropdown in-flow (pushes content) */
+    .dropdown { display:block; width:100%; }
+    .dropdown-toggle { display:block; width:100%; text-align:left; box-sizing:border-box; background:#e94f37; color:#fff; border-radius:8px; padding:10px 14px; cursor:pointer; border:none; font-weight:700; }
+    .dropdown-menu { display:none; margin-top:8px; gap:8px; flex-direction:column; width:100%; }
+    .dropdown.open .dropdown-menu { display:flex; }
+
+    .dropdown-menu .modal-btn { width:100%; padding:10px 12px; }
+
+    /* Form modal (iframe) */
+    .form-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 300000;
+    }
+    .form-modal.visible { display:flex; }
+
+    .form-modal-card {
+      width: 95%;
+      max-width: 980px;
+      height: 86vh;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-modal-header {
+      flex: 0 0 auto;
+      display: flex;
+      gap: 8px;
+      padding: 12px;
+      background: #fafafa;
+      border-bottom: 1px solid #eee;
+      justify-content: flex-end;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+
+    .form-modal-body { flex:1 1 auto; overflow:auto; }
+    .form-modal-body iframe { width:100%; height:100%; border:0; display:block; }
+
+    @media (max-width: 880px) {
+      .dual-modal { flex-direction: column; gap: 12px; }
+      .modal-card { width: 100%; max-width: 100%; min-width: auto; }
+      .modal-actions { flex-direction: column; align-items: stretch; }
+      .modal-btn, .dropdown-toggle { width:100%; }
+      .dropdown-menu { width:100%; }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const overlay = document.getElementById('dual-modal-overlay');
+      const formModal = document.getElementById('form-modal');
+      const formIframe = document.getElementById('form-iframe');
+      const formBack = document.getElementById('form-back');
+      const formClose = document.getElementById('form-close');
+
+      if (!overlay) return;
+
+      function openOverlay() {
+        overlay.classList.add('visible');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        // restaurar visibilidad de las tarjetas
+        overlay.querySelectorAll('.modal-card').forEach(c => c.style.display = '');
+      }
+
+      function closeOverlayAll() {
+        overlay.classList.remove('visible');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      // Cerrar solo la tarjeta correspondiente (X)
+      overlay.querySelectorAll('[data-close-card]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const card = e.currentTarget.closest('.modal-card');
+          if (card) card.style.display = 'none';
+          const anyVisible = Array.from(overlay.querySelectorAll('.modal-card'))
+            .some(c => getComputedStyle(c).display !== 'none');
+          if (!anyVisible) closeOverlayAll();
+          e.stopPropagation();
+        });
+      });
+
+      // Clicar sobre el fondo cierra todo
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeOverlayAll();
+      });
+
+      // Dropdowns en flujo (cierran otros del mismo card)
+      overlay.querySelectorAll('.dropdown').forEach(drop => {
+        const toggle = drop.querySelector('.dropdown-toggle');
+        if (!toggle) return;
+        toggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const card = drop.closest('.modal-card');
+          card.querySelectorAll('.dropdown.open').forEach(d => { if (d !== drop) d.classList.remove('open'); });
+          drop.classList.toggle('open');
+        });
+      });
+
+      // Abrir formulario en la misma vista (iframe)
+      function openFormInView(url) {
+        if (!formModal || !formIframe) return;
+        formIframe.src = url;
+        formModal.classList.add('visible');
+        formModal.setAttribute('aria-hidden', 'false');
+        // ocultar overlay para evitar doble interfaz
+        overlay.classList.remove('visible');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeFormView() {
+        if (!formModal) return;
+        formIframe.src = '';
+        formModal.classList.remove('visible');
+        formModal.setAttribute('aria-hidden', 'true');
+        const anyVisible = Array.from(overlay.querySelectorAll('.modal-card'))
+          .some(c => getComputedStyle(c).display !== 'none');
+        if (anyVisible) {
+          overlay.classList.add('visible');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        document.body.style.overflow = '';
+      }
+
+      // Delegación: clics que abren formularios
+      overlay.addEventListener('click', function (e) {
+        const btn = e.target.closest('.submenu-item, .direct-form, .educativa-btn');
+        if (!btn) return;
+        e.preventDefault();
+        const url = btn.getAttribute('data-form-url');
+        if (!url) { console.warn('No data-form-url on button', btn); return; }
+        openFormInView(url);
+      });
+
+      if (formBack) formBack.addEventListener('click', function (e) { e.preventDefault(); closeFormView(); });
+      if (formClose) formClose.addEventListener('click', function (e) { e.preventDefault(); closeFormView(); });
+
+      // Auto-open como antes
+      openOverlay();
+    });
+  </script>
 </body>
 
 </html>
